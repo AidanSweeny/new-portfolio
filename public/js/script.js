@@ -22,7 +22,7 @@ $('.projects').on("click", function(event) {
 
 $('.about').on("click", function(event) {
     event.preventDefault()
-    location.assign("/about")
+    location.assign("/")
 })
 
 $.ajax({ method: "GET", url: "/api/education" }).then(function (res) {

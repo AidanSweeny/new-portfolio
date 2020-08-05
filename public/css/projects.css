@@ -1,22 +1,20 @@
 body {
-    overflow: hidden;
     height: 100%;
     margin: 0;
+    overflow-x: hidden;
+    background-color: grey;
+
 }
 .icon {
-    position: fixed;
+    position: absolute;
     top: 50px;
     left: 10px;
     cursor: pointer;
 }
 
 h4 {
-    position:  fixed;
+    position:  absolute;
     left: 10px;
-}
-.cont {
-    width: 100%;
-    overflow: hidden;
 }
 
 .triangle {
@@ -39,7 +37,7 @@ h4 {
     border : 1px solid;
     transition: display 2s;
 }
-.projects {
+.project {
     border-radius: 5px;
     height: 40px;
     width: 80px;
@@ -50,6 +48,38 @@ h4 {
     background-color:  #ee8172;
     border : 1px solid;
     transition: display 2s;
+}
+
+img {
+    width: 300px;
+}
+.projects div:nth-child(1){
+    position: absolute;
+    top: 150px;
+}
+.projects div:nth-child(2){
+    position: absolute;
+    right: 5%;
+    top: 450px;
+}
+.projects div:nth-child(3){
+    position: absolute;
+    top: 750px;
+}
+.projects div:nth-child(4){
+    position: absolute;
+    right: 5%;
+    top: 1050px;
+}
+.projects div:nth-child(5){
+    position: absolute;
+
+    top: 1350px;
+}
+.projects div:nth-child(6){
+    position: absolute;
+    right: 5%;
+    top: 1650px;
 }
 
 /* Extra small devices (phones, 600px and down) */

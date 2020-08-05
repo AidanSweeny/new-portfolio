@@ -2,6 +2,7 @@ body {
     height: 100%;
     margin: 0;
     background-color:  grey;
+    overflow-x: hidden;
 }
 .icon {
     position: absolute;
@@ -13,10 +14,6 @@ body {
 h4 {
     position:  fixed;
     left: 10px;
-}
-.cont {
-    width: 100%;
-    overflow: hidden;
 }
 
 .triangle {
@@ -168,6 +165,37 @@ h4 {
     .about {
         left: 200px;
     }
+
+    .home {
+        position: absolute;
+        top: 500px;
+        left: 100px;
+    }
+    
+    .keyboard {
+        position: absolute;
+        top: 600px;
+        left: 100px;
+    }
+    
+    .school {
+        position: absolute;
+        top: 550px;
+        left: 100px;
+    }
+
+    .information{
+        top: 450px;
+        left: 100px;
+        right:auto;
+        font-size: 15px;
+    }
+
+    .profile {
+        width: 200px; 
+        right: 20%;
+        top: 180px;
+    }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -177,6 +205,24 @@ h4 {
     }
     .about {
         left: 400px;
+    }
+
+    .home {
+        position: absolute;
+        top: 250px;
+        left: 10%;
+    }
+    
+    .keyboard {
+        position: absolute;
+        top: 367px;
+        left: 10%;
+    }
+    
+    .school {
+        position: absolute;
+        top: 310px;
+        left: 10%;
     }
 }
 
@@ -188,6 +234,24 @@ h4 {
     .about {
         left: 500px;
     }
+
+    .home {
+        position: absolute;
+        top: 250px;
+        left: 20%;
+    }
+    
+    .keyboard {
+        position: absolute;
+        top: 367px;
+        left: 20%;
+    }
+    
+    .school {
+        position: absolute;
+        top: 310px;
+        left: 20%;
+    }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -198,6 +262,24 @@ h4 {
     .about {
         left: 800px;
     }
+
+    .home {
+        position: absolute;
+        top: 250px;
+        left: 28%;
+    }
+    
+    .keyboard {
+        position: absolute;
+        top: 367px;
+        left: 28%;
+    }
+    
+    .school {
+        position: absolute;
+        top: 310px;
+        left: 28%;
+    }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
@@ -207,5 +289,23 @@ h4 {
     }
     .about {
         left: 1100px;
+    }
+
+    .home {
+        position: absolute;
+        top: 250px;
+        left: 37%;
+    }
+    
+    .keyboard {
+        position: absolute;
+        top: 367px;
+        left: 37%;
+    }
+    
+    .school {
+        position: absolute;
+        top: 310px;
+        left: 37%;
     }
 }
