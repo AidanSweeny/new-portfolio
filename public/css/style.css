@@ -1,0 +1,122 @@
+body {
+    height: 100%;
+    margin: 0;
+    background-color:  grey;
+}
+.icon {
+    position: absolute;
+    top: 50px;
+    left: 10px;
+    cursor: pointer;
+}
+
+h4 {
+    position:  fixed;
+    left: 10px;
+}
+.cont {
+    width: 100%;
+    overflow: hidden;
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-right: 1500px solid transparent;
+    border-top: 100px solid #ee8172;
+    transition: width 2s;
+}
+.triangle2 {
+    float: right;
+    border-top: 500px;
+    width: 0;
+    height: 0;
+    border-right: 1550px solid rgb(86, 86, 223);
+    border-top: 100px solid transparent;
+    border-bottom: 700px solid transparent;
+}
+
+.triangle3 {
+    position:absolute;
+    top: 500px;
+    width: 0;
+    height: 0;
+    border-left: 1437px solid rgb(231, 231, 151);
+    border-top: 100px solid transparent;
+    border-bottom: 500px solid transparent;
+}
+
+.about {
+    border-radius: 5px;
+    height: 40px;
+    width: 80px;
+    opacity: 0%;
+    position: fixed; 
+    left: 900px;
+    top: 20px; 
+    background-color:  #ee8172;
+    border : 1px solid;
+    transition: display 2s;
+}
+.projects {
+    border-radius: 5px;
+    height: 40px;
+    width: 80px;
+    opacity: 0%;
+    position: fixed; 
+    left: 1000px;
+    top: 20px; 
+    background-color:  #ee8172;
+    border : 1px solid;
+    transition: display 2s;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .projects {
+        left: 300px;
+    }
+    .about {
+        left: 200px;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {    
+    .projects {
+        left: 500px;
+    }
+    .about {
+        left: 400px;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {   
+    .projects {
+        left: 600px;
+    }
+    .about {
+        left: 500px;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .projects {
+        left: 900px;
+    }
+    .about {
+        left: 800px;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .projects {
+        left: 1200px;
+    }
+    .about {
+        left: 1100px;
+    }
+}
