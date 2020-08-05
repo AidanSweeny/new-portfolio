@@ -45,6 +45,22 @@ h4 {
     border-top: 100px solid transparent;
     border-bottom: 500px solid transparent;
 }
+
+.triangle4 {
+    float: right;
+    width: 0;
+    height: 0;
+    border-right: 1550px solid rgb(133, 221, 122);
+    border-top: 100px solid transparent;
+    border-bottom: 900px solid transparent;
+}
+
+.skills {
+    position: absolute;
+    top: 1200px;
+    right: 300px;
+    z-index: 2;
+}
 @keyframes FadeIn { 
     0% {
       opacity: 50%;
@@ -121,6 +137,27 @@ h4 {
     width: 200px; 
     right: 5%;
     top: 200px;
+}
+
+.majorTit {
+    position: absolute;
+    top: 1000px;
+    left: 300px;
+    z-index: 2;
+}
+
+.minorTit {
+    position: absolute;
+    top:900px;
+    left: 300px;
+    z-index: 2;
+}
+
+.schoolTit {
+    position: absolute;
+    top: 800px;
+    left: 300px;
+    z-index: 2;
 }
 
 /* Extra small devices (phones, 600px and down) */

@@ -26,14 +26,36 @@ $('.about').on("click", function(event) {
 })
 
 $.ajax({ method: "GET", url: "/api/education" }).then(function (res) {
-    var school = res.school;
-    var major = res.major;
-    var minor = res.minor;
-    console.log(res.school);
+    var response = JSON.parse(res);
+    var school = response[0].school;
+    var major = response[0].major
+    var minor = response[0].minor
     var schoolTit = $(".schoolTit");
     var majorTit = $(".majorTit")
     var minorTit = $(".minorTit")
     schoolTit.text(school);
     majorTit.text(major);
     minorTit.text(minor);
+});
+
+$.ajax({ method: "GET", url: "/api/skills" }).then(function (res) {
+    var response = JSON.parse(res);
+    console.log(response)
+    for(element of response) {
+        if (element.category === "language"){
+            var li = $("<li>");
+            li.text(element.title);
+            $(".languages").append(li);
+        }
+        if (element.category === "style"){
+            var li = $("<li>");
+            li.text(element.title);
+            $(".styleLanguages").append(li);
+        }
+        if (element.category === "library"){
+            var li = $("<li>");
+            li.text(element.title);
+            $(".libraries").append(li);
+        }
+    }
 });
