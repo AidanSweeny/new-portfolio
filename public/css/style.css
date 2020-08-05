@@ -38,7 +38,7 @@ h4 {
 
 .triangle3 {
     position:absolute;
-    top: 500px;
+    top: 650px;
     width: 0;
     height: 0;
     border-left: 1437px solid rgb(231, 231, 151);
@@ -69,6 +69,13 @@ h4 {
     background-color:  #ee8172;
     border : 1px solid;
     transition: display 2s;
+}
+
+.profile {
+    position: absolute;
+    width: 200px; 
+    right: 5%;
+    top: 200px;
 }
 
 /* Extra small devices (phones, 600px and down) */
