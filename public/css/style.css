@@ -45,6 +45,51 @@ h4 {
     border-top: 100px solid transparent;
     border-bottom: 500px solid transparent;
 }
+@keyframes FadeIn { 
+    0% {
+      opacity: 50%;
+      transform: scale(.7);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .information li {
+    margin: 35px 0;
+    animation: FadeIn 1s linear;
+    animation-fill-mode: both;
+  }
+  
+  .information li:nth-child(1) { animation-delay: .5s }
+  .information li:nth-child(2) { animation-delay: 1s }
+  .information li:nth-child(3) { animation-delay: 1.5s }
+
+.information {
+    list-style-type: none;
+    position: absolute;
+    top: 200px;
+    right: 35%;
+    font-size: 20px;
+}
+
+.home {
+    position: absolute;
+    top: 250px;
+    left: 35%;
+}
+
+.keyboard {
+    position: absolute;
+    top: 367px;
+    left: 35%;
+}
+
+.school {
+    position: absolute;
+    top: 310px;
+    left: 35%;
+}
 
 .about {
     border-radius: 5px;

@@ -24,3 +24,16 @@ $('.about').on("click", function(event) {
     event.preventDefault()
     location.assign("/about")
 })
+
+$.ajax({ method: "GET", url: "/api/education" }).then(function (res) {
+    var school = res.school;
+    var major = res.major;
+    var minor = res.minor;
+    console.log(res.school);
+    var schoolTit = $(".schoolTit");
+    var majorTit = $(".majorTit")
+    var minorTit = $(".minorTit")
+    schoolTit.text(school);
+    majorTit.text(major);
+    minorTit.text(minor);
+});
