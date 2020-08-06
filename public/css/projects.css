@@ -25,6 +25,68 @@ h4 {
     transition: width 2s;
 }
 
+.triangle2 {
+    position: absolute;
+    top: 100px;
+    width: 0;
+    height: 0;
+    border-left: 800px solid rgb(86, 86, 223);
+    border-bottom: 300px solid transparent;
+    border-top: 300px solid transparent;
+}
+
+.triangle3 {
+    position: absolute;
+    top: 470px;
+    width: 0;
+    height: 0;
+    right:0px;
+    border-right: 800px solid rgb(231, 231, 151);
+    border-bottom: 400px solid transparent;
+    border-top: 400px solid transparent;
+}
+
+.triangle4 {
+    position: absolute;
+    top: 900px;
+    width: 0;
+    height: 0;
+    border-left: 800px solid rgb(133, 221, 122);
+    border-bottom: 300px solid transparent;
+    border-top: 300px solid transparent;
+}
+
+.triangle5 {
+    position: absolute;
+    top: 1300px;
+    width: 0;
+    height: 0;
+    right:0px;
+    border-right: 800px solid #ee8172;
+    border-bottom: 350px solid transparent;
+    border-top: 350px solid transparent;
+}
+
+.triangle6 {
+    position: absolute;
+    top: 1700px;
+    width: 0;
+    height: 0;
+    border-left: 800px solid rgb(86, 86, 223);
+    border-bottom: 300px solid transparent;
+    border-top: 300px solid transparent;
+}
+
+.triangle7 {
+    position: absolute;
+    top: 2100px;
+    width: 0;
+    height: 0;
+    right:0px;
+    border-right: 800px solid rgb(231, 231, 151);
+    border-bottom: 250px solid transparent;
+    border-top: 250px solid transparent;
+}
 .about {
     border-radius: 5px;
     height: 40px;
@@ -53,38 +115,52 @@ h4 {
 img {
     width: 300px;
 }
+
+.onePro {
+    border: 2px solid grey;
+    z-index: 2;
+}
+
+a {
+    border: 1px solid grey;
+    text-decoration: none;
+    color: white;
+    display: inline;
+}
 .projects div:nth-child(1){
     position: absolute;
-    top: 150px;
+    left: 2%;
+    top: 220px;
 }
 .projects div:nth-child(2){
     position: absolute;
-    right: 5%;
-    top: 450px;
+    right: 2%;
+    top: 650px;
 }
 .projects div:nth-child(3){
     position: absolute;
-    top: 750px;
+    left: 2%;
+    top: 1050px;
 }
 .projects div:nth-child(4){
     position: absolute;
-    right: 5%;
-    top: 1050px;
+    right: 2%;
+    top: 1500px;
 }
 .projects div:nth-child(5){
     position: absolute;
-
-    top: 1350px;
+    left: 2%;
+    top: 1850px;
 }
 .projects div:nth-child(6){
     position: absolute;
-    right: 5%;
-    top: 1650px;
+    right: 2%;
+    top: 2230px;
 }
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-    .projects {
+    .project {
         left: 300px;
     }
     .about {
@@ -94,7 +170,7 @@ img {
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {    
-    .projects {
+    .project {
         left: 500px;
     }
     .about {
@@ -104,7 +180,7 @@ img {
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {   
-    .projects {
+    .project {
         left: 600px;
     }
     .about {
@@ -114,7 +190,7 @@ img {
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-    .projects {
+    .project {
         left: 900px;
     }
     .about {
@@ -124,7 +200,7 @@ img {
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
-    .projects {
+    .project {
         left: 1200px;
     }
     .about {

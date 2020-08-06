@@ -3,19 +3,19 @@ $(".icon").on("click", function(event){
     event.preventDefault();
     if(open){
         $(".about").animate({"opacity": "0%"})
-        $(".projects").animate({"opacity": "0%"})
+        $(".project").animate({"opacity": "0%"})
         $(".triangle").css("width","0px")
         open = false;
     }
     else {
         $(".about").animate({"opacity": "100%"}, speed = 2000)
-        $(".projects").animate({"opacity": "100%"}, speed = 2000)
+        $(".project").animate({"opacity": "100%"}, speed = 2000)
         $(".triangle").css("width","1500px")
         open = true;
     }
 })
 
-$('.projects').on("click", function(event) {
+$('.project').on("click", function(event) {
     event.preventDefault()
     location.assign("/projects")
 })
@@ -36,6 +36,7 @@ $.ajax({ method: "GET", url: "/api/projects" }).then(function (res) {
         var img = $("<img>");
         var deployed = $("<a>");
         var repo = $("<a>");
+        var ul = $("<ul>")
         var title = $("<h4>");
         img.attr("src", imgE);
         img.attr("alt", titleE)
@@ -44,9 +45,11 @@ $.ajax({ method: "GET", url: "/api/projects" }).then(function (res) {
         repo.attr("href", repoE)
         repo.text("Repository Link")
         title.text(titleE);
+        title.css({"background-color": "grey", "color" : "white", "border" : "10px solid grey"})
         var div = $("<div>")
         div.addClass("onePro");
-        div.append(title, img, deployed, repo)
+        ul.append(repo, $("<br>"), deployed);
+        div.append(title, img, ul)
         $(".projects").append(div);
     }
 });

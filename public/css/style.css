@@ -16,6 +16,7 @@ h4 {
     left: 10px;
 }
 
+
 .triangle {
     width: 0;
     height: 0;
@@ -23,14 +24,22 @@ h4 {
     border-top: 100px solid #ee8172;
     transition: width 2s;
 }
+
 .triangle2 {
-    float: right;
-    border-top: 500px;
+    float:right;
     width: 0;
     height: 0;
-    border-right: 1550px solid rgb(86, 86, 223);
+    border-right: 1500px solid rgb(86, 86, 223);
     border-top: 100px solid transparent;
     border-bottom: 700px solid transparent;
+}
+
+.ed {
+    position: absolute;
+    top: 850px;
+    left: 10px;
+    z-index: 2;
+    font-size: 30px;
 }
 
 .triangle3 {
@@ -52,10 +61,20 @@ h4 {
     border-bottom: 900px solid transparent;
 }
 
+.triangle5 {
+    position: absolute;
+    top: 1500px;
+    width: 0;
+    height: 0;
+    border-left: 1550px solid rgb(86, 86, 223);
+    border-top: 100px solid transparent;
+    border-bottom: 700px solid transparent;
+}
+
 .skills {
     position: absolute;
-    top: 1200px;
-    right: 300px;
+    top: 1150px;
+    right: 400px;
     z-index: 2;
 }
 @keyframes FadeIn { 
@@ -138,21 +157,29 @@ h4 {
 
 .majorTit {
     position: absolute;
-    top: 1000px;
+    top: 850px;
     left: 300px;
     z-index: 2;
 }
 
 .minorTit {
     position: absolute;
-    top:900px;
+    top:950px;
     left: 300px;
+    z-index: 2;
+}
+
+.proKno {
+    position: absolute;
+    top: 1200px;
+    right: 5%;
+    font-size: 30px;
     z-index: 2;
 }
 
 .schoolTit {
     position: absolute;
-    top: 800px;
+    top: 750px;
     left: 300px;
     z-index: 2;
 }

@@ -34,8 +34,8 @@ $.ajax({ method: "GET", url: "/api/education" }).then(function (res) {
     var majorTit = $(".majorTit")
     var minorTit = $(".minorTit")
     schoolTit.text(school);
-    majorTit.text(major);
-    minorTit.text(minor);
+    majorTit.text("Major: " + major);
+    minorTit.text("Minors: " + minor);
 });
 
 $.ajax({ method: "GET", url: "/api/skills" }).then(function (res) {
