@@ -23,7 +23,7 @@ p {
 .contact {
     position: absolute;
     top: 1700px;
-    left: 200px;
+    left: 20%;
     z-index: 2;
 }
 
@@ -206,6 +206,29 @@ ul {
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
+    .majorTit {
+        left: 45%;
+    }
+    .minorTit {
+        left: 45%;
+    }
+    .schoolTit {
+        left: 45%;
+    }
+    .styleLanguages {
+        position:absolute;
+        left: 100px;
+    }
+    .libraries {
+        position:absolute;
+        left: 200px;
+    }
+    .languages {
+        position:absolute;
+    }
+    .proKno {
+        top: 1050px;
+    }
     .projects {
         left: 300px;
     }
