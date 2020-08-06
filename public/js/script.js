@@ -34,8 +34,10 @@ $.ajax({ method: "GET", url: "/api/education" }).then(function (res) {
     var majorTit = $(".majorTit")
     var minorTit = $(".minorTit")
     schoolTit.text(school);
-    majorTit.text("Major: " + major);
-    minorTit.text("Minors: " + minor);
+    majorTit.css("color", "grey")
+    minorTit.css("color", "grey")
+    majorTit.text(major + " Major");
+    minorTit.text(minor + "Minor");
 });
 
 $.ajax({ method: "GET", url: "/api/skills" }).then(function (res) {
@@ -44,16 +46,19 @@ $.ajax({ method: "GET", url: "/api/skills" }).then(function (res) {
     for(element of response) {
         if (element.category === "language"){
             var li = $("<li>");
+            li.css("color", "grey")
             li.text(element.title);
             $(".languages").append(li);
         }
         if (element.category === "style"){
             var li = $("<li>");
+            li.css("color", "grey")
             li.text(element.title);
             $(".styleLanguages").append(li);
         }
         if (element.category === "library"){
             var li = $("<li>");
+            li.css("color", "grey")
             li.text(element.title);
             $(".libraries").append(li);
         }

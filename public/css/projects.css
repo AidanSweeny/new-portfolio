@@ -3,7 +3,7 @@ body {
     margin: 0;
     overflow-x: hidden;
     background-color: grey;
-
+    font-family: 'Open Sans', sans-serif;
 }
 .icon {
     position: absolute;
@@ -84,7 +84,7 @@ h4 {
     height: 0;
     right:0px;
     border-right: 800px solid rgb(231, 231, 151);
-    border-bottom: 250px solid transparent;
+    border-bottom: 450px solid transparent;
     border-top: 250px solid transparent;
 }
 .about {
@@ -122,7 +122,6 @@ img {
 }
 
 a {
-    border: 1px solid grey;
     text-decoration: none;
     color: white;
     display: inline;

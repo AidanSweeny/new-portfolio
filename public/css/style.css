@@ -3,6 +3,7 @@ body {
     margin: 0;
     background-color:  grey;
     overflow-x: hidden;
+    font-family: 'Open Sans', sans-serif;
 }
 .icon {
     position: absolute;
@@ -16,6 +17,21 @@ h4 {
     left: 10px;
 }
 
+p {
+    color: grey;
+}
+.contact {
+    position: absolute;
+    top: 1700px;
+    left: 200px;
+    z-index: 2;
+}
+
+a {
+    text-decoration: none;
+    color: grey;
+    display: inline;
+}
 
 .triangle {
     width: 0;
@@ -88,6 +104,7 @@ h4 {
   }
   
   .information li {
+    color: grey;
     margin: 35px 0;
     animation: FadeIn 1s linear;
     animation-fill-mode: both;
@@ -97,6 +114,9 @@ h4 {
   .information li:nth-child(2) { animation-delay: 1s }
   .information li:nth-child(3) { animation-delay: 1.5s }
 
+ul {
+    list-style-type: none;
+}
 .information {
     list-style-type: none;
     position: absolute;
