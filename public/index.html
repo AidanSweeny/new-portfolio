@@ -5,31 +5,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">    <link href="/css/style.css" type="text/css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">    
+    <link href="/css/style.css" type="text/css" rel="stylesheet">
     <title>Document</title>
 </head>
 
 <body>
-    <h4 style="position: absolute">Aidan Sweeny</h4>
-    <i class="material-icons icon">menu</i>
+    <div class = "nav">
+    <h4 class = "name">Aidan Sweeny</h4>
+    <i class="material-icons icon menu">menu</i>
     <button class="about">About</button>
     <button class="projects">Projects</button>
-    <div class="triangle">
+    <button class="experience">Experience</button>
     </div>
+    <h1 class = "bigName">Aidan Sweeny</h1>
+    <!-- <div class="triangle"></div> -->
+    <!-- 
+    <p class = "aboutMeTitle">About Me</p>
+    <div class="triangle2"></div> -->
+    <div class="parallax">
+        <div id="group1" class="parallax__group">
+          <div class="parallax__layer parallax__layer--fore">
+            <img class="sf1" src="sf.png" alt="Image of sf 1">
+            <div id = "one" class = "desBlock7"></div>
+            <div id = "two" class = "desBlock7"></div>
+            <div class = "block" >
+                <h3 class = "hi reveal">Hi! My name is Aidan Sweeny and welcome to my website!</h3>
+                <hr class = "line reveal">
+                <h3 class = "iam reveal">I am ...</h3>
+                <div class = "desBlock reveal"></div>
+                <p id = "firstBlob" class = "blob reveal">A Full Stack Web Developer with experience successfully navigating a fast paced, start-up work environment</p>
+                <p id = "secondBlob" class = "blob reveal">A Graduating Senior at Colby College, currently completing a Computer Science degree with a double minor in Astronomy and Italian</p>
+                <p id = "thirdBlob" class = "blob reveal">Seeking software engineering position in a dynamic, growing company with positive team-based culture</p></p>
+                <div class = "desBlock2 "></div>
+                <div class = "desBlock3"></div>
+                <div class = "desBlock4"></div>
+                <div class = "desBlock5"></div>
+                <div class = "desBlock6"></div>
+                <div class = "desBlock7 "></div>
+                <div class = "desBlock8"></div>
+                <div class = "desBlock9"></div>
+                <div class = "desBlock10"></div>
+                <div class = "desBlock11"></div>
+                <div class = "desBlock12"></div>
+            </div>
+            <div id = "trans1" class = "transBlock" ></div>
+            <div class = "block" >
+                <h3 class = "workExperienceTit reveal">Work Experience</h3>
+                <img class="spin reveal" src="spin.png" alt="Image of spin logo">
+                <p id = "fourthBlob" class = "blob reveal">Worked in a fast past, start-up environment on scooter safety, map protocol across numerous cities including London and Sydney</p>
+                <ul>
+                    <li>Assisted engineers with new endpoints when partner APIs were updated</li>
+                    <li>Created management pages for testing</li>
+                    <li>Fixed efficiency problems with requests</li>
+                    <li>Worked in Ruby on Rails, Rspec, and SQL and various gem dependencies</li>
+                    <li>Gained experience in Git flow, pair programming, cleaning up commits and how to write efficient, readable code</li>
+                </ul>
 
-    <div class="triangle2"></div>
-    <img class="profile" src="Aidan.jpg" alt="Image of Aidan Sweeny">
-    <i class="material-icons icon home">home</i>
-    <i class="material-icons icon school">school</i>
-    <i class="material-icons icon keyboard">keyboard</i>
-    <ul class="information">
-        <li id="one"> Born and raised in the Bay Area</li>
-        <li id="two">Attended Colby College in Maine</li>
-        <li id="three">Graduated Berkley Coding Bootcamp</li>
-    </ul>
+            </div>
+          </div>
+          <div class="parallax__layer parallax__layer--back">
+                <img class="sf3" src="sf2.png" alt="Image of sf 3">
+              </div>
+              <div class="parallax__layer parallax__layer--deep">
+                <img class="sf4" src="sf3.png" alt="Image of sf 4">
+            </div>
+          <div class="parallax__layer parallax__layer--base">
+            <img class="sf2" src="sf1.png" alt="Image of sf 2">
+            <div id = "trans2" class = "transBlock" ></div>
+            <div class = "containerOut">
+                <div id = "cI" class = "containerItems"></div>
+                <img class="profile" src="Aidan.jpg" alt="Image of Aidan Sweeny">
+            </div>
+            </div>
+          </div>
+        </div>  
+      </div>
+    <!-- <div class = "block" id = "block"></div> -->
+    <!-- <img class="profile" src="Aidan.jpg" alt="Image of Aidan Sweeny">
     <div class="education">
         <h4 class = "ed">Education</h4>
         <h3 class="schoolTit"></h3>
@@ -55,7 +112,7 @@
         <br>
         <p>Phone: (415)-300-7568</p>
         <p>Email: aidansweeny@gmail.com</p>
-    </div>
+    </div> -->
     <script src="./js/script.js"></script>
 
 </body>

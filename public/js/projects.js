@@ -3,19 +3,21 @@ $(".icon").on("click", function(event){
     event.preventDefault();
     if(open){
         $(".about").animate({"opacity": "0%"})
-        $(".project").animate({"opacity": "0%"})
+        $(".projects").animate({"opacity": "0%"})
+        $(".experience").animate({"opacity": "0%"})
         $(".triangle").css("width","0px")
         open = false;
     }
     else {
         $(".about").animate({"opacity": "100%"}, speed = 2000)
-        $(".project").animate({"opacity": "100%"}, speed = 2000)
+        $(".projects").animate({"opacity": "100%"}, speed = 2000)
+        $(".experience").animate({"opacity": "100%"}, speed = 2000)
         $(".triangle").css("width","1500px")
         open = true;
     }
 })
 
-$('.project').on("click", function(event) {
+$('.projects').on("click", function(event) {
     event.preventDefault()
     location.assign("/projects")
 })
@@ -23,6 +25,11 @@ $('.project').on("click", function(event) {
 $('.about').on("click", function(event) {
     event.preventDefault()
     location.assign("/")
+})
+
+$('.experience').on("click", function(event) {
+    event.preventDefault()
+    location.assign("/experience")
 })
 
 $.ajax({ method: "GET", url: "/api/projects" }).then(function (res) {

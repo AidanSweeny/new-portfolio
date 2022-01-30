@@ -1,381 +1,422 @@
+:root {
+    --sfMover: 0px;
+}
+
 body {
     height: 100%;
     margin: 0;
-    background-color:  grey;
+    background-color:  rgb(203, 214, 224);
     overflow-x: hidden;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;}
+
+.nav {
+    color: white;
 }
-.icon {
+
+.name {
+    opacity: 0%;
+    left: 10px;
+    z-index: 3;
+    position: fixed;
+    transition: display 2s;
+}
+
+.bigName {
+    margin: 0;
+    opacity: 100%;
+    z-index: 5;
+    left: 55px;
+    bottom: 15px;
+    font-size: 90px;
+    color: white;
+    position: fixed;
+}
+
+.parallax {
+    height: 500px; /* fallback for older browsers */
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-perspective: 300px;
+    perspective: 300px;
+  }
+
+  .parallax__group {
+    position: relative;
+    height: 500px; /* fallback for older browsers */
+    height: 100vh;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+  }
+
+  .parallax__layer {
     position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  
+  .parallax__group {
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: transform 0.5s;
+
+  }
+
+  .parallax__layer--fore {
+    -webkit-transform: translateZ(90px) scale(.7);
+    transform: translateZ(90px) scale(.7);
+    z-index: 1;
+  }
+
+  .parallax__layer--base {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    z-index: 4;
+  }
+
+  .parallax__layer--back {
+    -webkit-transform: translateZ(-300px) scale(2);
+    transform: translateZ(-300px) scale(2);
+    z-index: 3;
+  }
+
+  .parallax__layer--deep {
+
+    -webkit-transform: translateZ(-600px) scale(3);
+    transform: translateZ(-600px) scale(3);
+    z-index: 2;
+  }
+
+  .sf1,.sf2,.sf3,.sf4 {
+    width:1440px; 
+    height: 773.31px;
+    left: 0;
+    transform: translate(var(--sfMover));
+  }
+
+  .reveal {
+    opacity: 0%;
+  }
+
+  .block {
+    padding: 10px;
+    padding-left: 0px;
+    width: 100%;
+    height: 1000px;
+    background-color: rgb(98, 110, 143);
+  }
+
+  hr {
+    width: 80%;
+    border-top: solid 1px white;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+  .transBlock {
+    pointer-events: none;
+    width: 100%;
+    background-color: transparent;
+  }
+
+  #trans1 {
+    height: 400px;
+  }
+
+  #trans2 {
+    height: 500px;
+  }
+
+.menu {
+    opacity: 0%;
+    z-index: 3;
+    position: fixed;
     top: 50px;
     left: 10px;
     cursor: pointer;
+    transition: display 2s;
 }
 
-h4 {
-    position:  fixed;
-    left: 10px;
+.containerOut {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
-p {
-    color: grey;
+.containerItems {
+    display: grid;
+    height: 200px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
-.contact {
+
+.profile {
+    width: 100%;
+}
+
+.iam {
+    font-weight: bold;
+    font-size: 50px;
+    margin-top: 20px;
+    color: white;
+    margin-left: 20px;
+}
+
+.desBlock {
     position: absolute;
+    width: 700px;
+    height: 350px;
+    border: 3px solid white;
+    top: 1120px;
+    left: 50px;
+}
+
+.desBlock2 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: 1px solid white;
+    top: 1650px;
+    right: 10px;
+}
+
+.desBlock3 {
+    position: absolute;
+    width: 150px;
+    height: 200px;
+    background-color: white;
+    top: 1450px;
+    right: 150px;
+}
+
+.desBlock4 {
+    position: absolute;
+    width: 300px;
+    height: 150px;
+    border: 5px solid white;
+    top: 1550px;
+    right: 70px;
+}
+
+.desBlock5 {
+    position: absolute;
+    width: 500px;
+    height: 300px;
+    border: 1px solid white;
+    top: 1300px;
+    right: 500px;
+}
+
+.desBlock6 {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background-color: white;
     top: 1700px;
-    left: 20%;
-    z-index: 2;
-}
-
-a {
-    text-decoration: none;
-    color: grey;
-    display: inline;
-}
-
-.triangle {
-    width: 0;
-    height: 0;
-    border-right: 1500px solid transparent;
-    border-top: 100px solid #ee8172;
-    transition: width 2s;
-}
-
-.triangle2 {
-    float:right;
-    width: 0;
-    height: 0;
-    border-right: 1500px solid rgb(86, 86, 223);
-    border-top: 100px solid transparent;
-    border-bottom: 700px solid transparent;
-}
-
-.ed {
-    position: absolute;
-    top: 850px;
-    left: 10px;
-    z-index: 2;
-    font-size: 30px;
-}
-
-.triangle3 {
-    position:absolute;
-    top: 650px;
-    width: 0;
-    height: 0;
-    border-left: 1437px solid rgb(231, 231, 151);
-    border-top: 100px solid transparent;
-    border-bottom: 500px solid transparent;
-}
-
-.triangle4 {
-    float: right;
-    width: 0;
-    height: 0;
-    border-right: 1550px solid rgb(133, 221, 122);
-    border-top: 100px solid transparent;
-    border-bottom: 900px solid transparent;
-}
-
-.triangle5 {
-    position: absolute;
-    top: 1500px;
-    width: 0;
-    height: 0;
-    border-left: 1550px solid rgb(86, 86, 223);
-    border-top: 100px solid transparent;
-    border-bottom: 700px solid transparent;
-}
-
-.skills {
-    position: absolute;
-    top: 1150px;
     right: 400px;
-    z-index: 2;
 }
-@keyframes FadeIn { 
-    0% {
-      opacity: 50%;
-      transform: scale(.7);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-  
-  .information li {
-    color: grey;
-    margin: 35px 0;
-    animation: FadeIn 1s linear;
-    animation-fill-mode: both;
-  }
-  
-  .information li:nth-child(1) { animation-delay: .5s }
-  .information li:nth-child(2) { animation-delay: 1s }
-  .information li:nth-child(3) { animation-delay: 1.5s }
+
+.desBlock7 {
+    z-index: 10;
+    position: absolute;
+    width: 50%;
+    height: 650px;
+    top: 50px;
+}
+
+.desBlock8 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: 10px solid rgb(98, 110, 143);
+    top: 1800px;
+    right: 10px;
+}
+
+.desBlock9 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(98, 110, 143);
+    top: 1850px;
+    right: 150px;
+}
+
+.desBlock10 {
+    position: absolute;
+    width: 250px;
+    height: 150px;
+    border: 5px solid rgb(98, 110, 143);
+    top: 1880px;
+    right: 70px;
+}
+
+
+.desBlock11 {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background-color: rgb(98, 110, 143);
+    top: 1762px;
+    right: 100px;
+}
+
+.desBlock12 {
+    position: absolute;
+    width: 70px;
+    height: 35px;
+    background-color: white;
+    top: 1762px;
+    right: 100px;
+}
+
+#one {
+    left: 50px;
+    border-left: 3px solid rgb(98, 110, 143);
+    border-top: 3px solid rgb(98, 110, 143);
+    border-bottom: 3px solid rgb(98, 110, 143);
+}
+
+#two {
+    right: 50px;
+    border-right: 3px solid rgb(98, 110, 143);
+    border-top: 3px solid rgb(98, 110, 143);
+    border-bottom: 3px solid rgb(98, 110, 143);
+}
+
+
+.hi {
+    font-weight: bolder;
+    font-size: 50px;
+    margin-top: 20px;
+    text-align: center;
+    color: white;
+}
+
+.blob {
+    text-align: left;
+    width: 700px;
+    font-size: 30px;
+    margin-left: 20px;
+    margin-top: 30px;
+    color: white;
+}
+
+.item {
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    background-size: contain;
+    border: solid 3px rgb(98, 110, 143);
+}
+
+.workExperienceTit {
+    color: white;
+    font-weight: bold;
+    font-size: 50px;
+    margin:10px;
+    margin-left: 20px;
+}
+
+.spin {
+    width: 400px;
+    margin-left: 20px;
+}
+
+#fourthBlob {
+    margin: 0;
+    margin-left: 20px;
+}
 
 ul {
-    list-style-type: none;
-}
-.information {
-    list-style-type: none;
-    position: absolute;
-    top: 200px;
-    right: 35%;
+    color: white;
     font-size: 20px;
 }
 
-.home {
-    position: absolute;
-    top: 250px;
-    left: 35%;
-}
-
-.keyboard {
-    position: absolute;
-    top: 367px;
-    left: 35%;
-}
-
-.school {
-    position: absolute;
-    top: 310px;
-    left: 35%;
-}
+/* .triangle {
+    z-index: 2;
+    position: fixed;
+    width: 0;
+    height: 0;
+    border-right: 1500px solid transparent;
+    border-top: 100px solid #ccb7b4;
+    transition: width 2s;
+} */
 
 .about {
+    background-color: transparent;
+    color: white;
+    right: 230px;
+    z-index: 3;
     border-radius: 5px;
     height: 40px;
     width: 80px;
     opacity: 0%;
     position: fixed; 
-    left: 900px;
     top: 20px; 
-    background-color:  #ee8172;
     border : 1px solid;
     transition: display 2s;
 }
 .projects {
+    background-color: transparent;
+    color: white;
+    right: 130px;
+    z-index: 3;
     border-radius: 5px;
     height: 40px;
     width: 80px;
     opacity: 0%;
     position: fixed; 
-    left: 1000px;
     top: 20px; 
-    background-color:  #ee8172;
     border : 1px solid;
     transition: display 2s;
 }
 
-.profile {
-    position: absolute;
-    width: 200px; 
-    right: 5%;
-    top: 200px;
-}
-
-.majorTit {
-    position: absolute;
-    top: 850px;
-    left: 300px;
-    z-index: 2;
-}
-
-.minorTit {
-    position: absolute;
-    top:950px;
-    left: 300px;
-    z-index: 2;
-}
-
-.proKno {
-    position: absolute;
-    top: 1200px;
-    right: 5%;
-    font-size: 30px;
-    z-index: 2;
-}
-
-.schoolTit {
-    position: absolute;
-    top: 750px;
-    left: 300px;
-    z-index: 2;
+.experience {
+    background-color: transparent;
+    color: white;
+    right: 30px;
+    z-index: 3;
+    border-radius: 5px;
+    height: 40px;
+    width: 80px;
+    opacity: 0%;
+    position: fixed; 
+    top: 20px; 
+    border : 1px solid;
+    transition: display 2s;
 }
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-    .majorTit {
-        left: 45%;
-    }
-    .minorTit {
-        left: 45%;
-    }
-    .schoolTit {
-        left: 45%;
-    }
-    .styleLanguages {
-        position:absolute;
-        left: 100px;
-    }
-    .libraries {
-        position:absolute;
-        left: 200px;
-    }
-    .languages {
-        position:absolute;
-    }
-    .proKno {
-        top: 1050px;
-    }
-    .projects {
-        left: 300px;
-    }
-    .about {
-        left: 200px;
-    }
-
-    .home {
-        position: absolute;
-        top: 500px;
-        left: 100px;
-    }
-    
-    .keyboard {
-        position: absolute;
-        top: 600px;
-        left: 100px;
-    }
-    
-    .school {
-        position: absolute;
-        top: 550px;
-        left: 100px;
-    }
-
-    .information{
-        top: 450px;
-        left: 100px;
-        right:auto;
-        font-size: 15px;
-    }
-
-    .profile {
-        width: 200px; 
-        right: 20%;
-        top: 180px;
+    :root {
+        --sfMover: -450px;
     }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {    
-    .projects {
-        left: 500px;
-    }
-    .about {
-        left: 400px;
-    }
-
-    .home {
-        position: absolute;
-        top: 250px;
-        left: 10%;
-    }
-    
-    .keyboard {
-        position: absolute;
-        top: 367px;
-        left: 10%;
-    }
-    
-    .school {
-        position: absolute;
-        top: 310px;
-        left: 10%;
-    }
+@media only screen and (min-width: 600px) { 
+    :root {
+        --sfMover: -350px;
+    }   
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {   
-    .projects {
-        left: 600px;
-    }
-    .about {
-        left: 500px;
-    }
-
-    .home {
-        position: absolute;
-        top: 250px;
-        left: 20%;
-    }
-    
-    .keyboard {
-        position: absolute;
-        top: 367px;
-        left: 20%;
-    }
-    
-    .school {
-        position: absolute;
-        top: 310px;
-        left: 20%;
+    :root {
+        --sfMover: -250px;
     }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-    .projects {
-        left: 900px;
-    }
-    .about {
-        left: 800px;
-    }
-
-    .home {
-        position: absolute;
-        top: 250px;
-        left: 28%;
-    }
-    
-    .keyboard {
-        position: absolute;
-        top: 367px;
-        left: 28%;
-    }
-    
-    .school {
-        position: absolute;
-        top: 310px;
-        left: 28%;
+    :root {
+        --sfMover: -150px;
     }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-    .projects {
-        left: 1200px;
-    }
-    .about {
-        left: 1100px;
-    }
-
-    .home {
-        position: absolute;
-        top: 250px;
-        left: 37%;
-    }
-    
-    .keyboard {
-        position: absolute;
-        top: 367px;
-        left: 37%;
-    }
-    
-    .school {
-        position: absolute;
-        top: 310px;
-        left: 37%;
+@media only screen and (min-width: 1100px) {
+    :root {
+        --sfMover: 0px;
     }
 }
