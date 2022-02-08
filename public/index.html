@@ -9,55 +9,69 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">    
-    <link href="/css/style.css" type="text/css" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">     -->
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200&display=swap" rel="stylesheet">    <link href="/css/style.css" type="text/css" rel="stylesheet">
     <title>Document</title>
 </head>
 
 <body>
     <div class = "nav">
-    <h4 class = "name">Aidan Sweeny</h4>
-    <i class="material-icons icon menu">menu</i>
-    <button class="about">About</button>
-    <button class="projects">Projects</button>
-    <button class="experience">Experience</button>
+        <h2 class = "name">Aidan Sweeny</h2>
+        <i class="material-icons icon menu">menu</i>
+        <div class="about">About</div>
+        <div class="projects">Projects</div>
+        <div class="experience">Experience</div>
     </div>
     <h1 class = "bigName">Aidan Sweeny</h1>
-    <!-- <div class="triangle"></div> -->
-    <!-- 
-    <p class = "aboutMeTitle">About Me</p>
-    <div class="triangle2"></div> -->
     <div class="parallax">
         <div id="group1" class="parallax__group">
           <div class="parallax__layer parallax__layer--fore">
             <img class="sf1" src="sf.png" alt="Image of sf 1">
-            <div id = "one" class = "desBlock7"></div>
-            <div id = "two" class = "desBlock7"></div>
-            <div class = "block" >
-                <h3 class = "hi reveal">Hi! My name is Aidan Sweeny and welcome to my website!</h3>
-                <hr class = "line reveal">
-                <h3 class = "iam reveal">I am ...</h3>
-                <div class = "desBlock reveal"></div>
-                <p id = "firstBlob" class = "blob reveal">A Full Stack Web Developer with experience successfully navigating a fast paced, start-up work environment</p>
-                <p id = "secondBlob" class = "blob reveal">A Graduating Senior at Colby College, currently completing a Computer Science degree with a double minor in Astronomy and Italian</p>
-                <p id = "thirdBlob" class = "blob reveal">Seeking software engineering position in a dynamic, growing company with positive team-based culture</p></p>
-                <div class = "desBlock2 "></div>
-                <div class = "desBlock3"></div>
-                <div class = "desBlock4"></div>
-                <div class = "desBlock5"></div>
-                <div class = "desBlock6"></div>
-                <div class = "desBlock7 "></div>
-                <div class = "desBlock8"></div>
-                <div class = "desBlock9"></div>
-                <div class = "desBlock10"></div>
-                <div class = "desBlock11"></div>
-                <div class = "desBlock12"></div>
+            <!-- <div id = "one" class = "desBlock7"></div>
+            <div id = "two" class = "desBlock7"></div> -->
+            <div class = "fixBlock"></div>
+            <div class = "headline">
+                <!-- <p class = "hiPre reveal">Hi! My name is...</p> -->
+                <div class = "line1 reveal"></div>
+                <div class = "line2 reveal"></div>
+                <h3 id = "hi1" class = "hi showUp">Aidan Sweeny</h3>
+                <h3 id = "hi2" class = "hi reveal">Full Stack Web Developer</h3>
+                <!-- <hr class = "line reveal"> -->
             </div>
-            <div id = "trans1" class = "transBlock" ></div>
-            <div class = "block" >
+            <div class = "leftBar"></div>
+            <div id = "secondBlock" class = "block"></div>
+            <div id = "firstBlock" class = "block" >
+                <p id = "firstBlob" class = "blob1 reveal">Web Designer with experience successfully navigating a fast paced, start-up work environment</p>
+                <p id = "secondBlob" class = "blob2 reveal">Graduating Senior at Colby College, currently completing a Computer Science degree with a double minor in Astronomy and Italian</p>
+                <p id = "thirdBlob" class = "blob3 reveal">Seeking software engineering position in a dynamic, growing company with positive team-based culture</p></p>
+                <div class = "desBlock2 desBlock"></div>
+                <div class = "desBlock3 desBlock"></div>
+                <div class = "desBlock4 desBlock"></div>
+                <div class = "desBlock6 desBlock"></div>
+                <div class = "desBlock7 desBlock"></div>
+                <div class = "desBlock8 desBlock"></div>
+                <div class = "desBlock9 desBlock"></div>
+                <div class = "desBlock10 desBlock"></div>
+                <div class = "desBlock11 desBlock"></div>
+            </div>
+            <div class = "bottomBar"></div>
+            <div class = "transBlock"></div>
+            <div id = "secondHeadline" class = "headline">
+                <div class = "containerOut">
+                    <div id = "cI" class = "containerItems"></div>
+                    <div id = "skillsBlock" class = "block">
+                        <div class = "containerOut">
+                            <img class = "skillIcon">
+                            <p class = "skillDescription"></p>
+                        </div>
+                        <h3 class = "skillName"></h3>
+                    </div>
+                </div>
+            </div>
+            <div id = "experienceBlock" class = "block" >
                 <h3 class = "workExperienceTit reveal">Work Experience</h3>
                 <img class="spin reveal" src="spin.png" alt="Image of spin logo">
-                <p id = "fourthBlob" class = "blob reveal">Worked in a fast past, start-up environment on scooter safety, map protocol across numerous cities including London and Sydney</p>
+                <p id = "fourthBlob" class = "fourthBlob reveal">Worked in a fast paced, start-up environment on scooter safety, map protocol across numerous cities including London and Sydney</p>
                 <ul>
                     <li>Assisted engineers with new endpoints when partner APIs were updated</li>
                     <li>Created management pages for testing</li>
@@ -65,22 +79,26 @@
                     <li>Worked in Ruby on Rails, Rspec, and SQL and various gem dependencies</li>
                     <li>Gained experience in Git flow, pair programming, cleaning up commits and how to write efficient, readable code</li>
                 </ul>
-
+                <!-- <div class = "desBlock13 desBlock"></div>
+                <div class = "desBlock14 desBlock"></div>
+                <div class = "desBlock15 desBlock"></div>
+                <div class = "desBlock16 desBlock"></div>
+                <div class = "desBlock17 desBlock"></div> -->
+            </div>
+            <div id = "projectBlock" class = "block">
+                <h3 class = "projectTit reveal">Projects</h3>
             </div>
           </div>
           <div class="parallax__layer parallax__layer--back">
                 <img class="sf3" src="sf2.png" alt="Image of sf 3">
               </div>
               <div class="parallax__layer parallax__layer--deep">
+                    <img class = "sf5" src = "sf4.png" alt = "Background Image sf">
                 <img class="sf4" src="sf3.png" alt="Image of sf 4">
             </div>
           <div class="parallax__layer parallax__layer--base">
             <img class="sf2" src="sf1.png" alt="Image of sf 2">
-            <div id = "trans2" class = "transBlock" ></div>
-            <div class = "containerOut">
-                <div id = "cI" class = "containerItems"></div>
-                <img class="profile" src="Aidan.jpg" alt="Image of Aidan Sweeny">
-            </div>
+            <img class="profile" src="Aidan.jpg" alt="Image of Aidan Sweeny">
             </div>
           </div>
         </div>  

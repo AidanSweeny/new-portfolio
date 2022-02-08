@@ -1,5 +1,16 @@
 :root {
     --sfMover: 0px;
+    --navGradient: 10%;
+    --itemSize: 100px;
+    --secondBlockLeft: 550px;
+    --profileSize: 600px;
+    --nameFontSize: 70px;
+    --headlineWidth: 200px;
+    --barHeight: 232px;
+    --blobWidth: 400px;
+    --blobFontSize: 20px;
+    --blobTop: 1000px;
+    --blobLeft: 600px;
 }
 
 body {
@@ -7,18 +18,36 @@ body {
     margin: 0;
     background-color:  rgb(203, 214, 224);
     overflow-x: hidden;
-    font-family: 'Roboto', sans-serif;}
+    /* font-family: 'Roboto', sans-serif;} */
+    font-family: 'Manrope', sans-serif;
+}
 
 .nav {
+    z-index: 10;
+    top: 0;
+    width: 0px;
+    height: 100%;
+    position: fixed;
     color: white;
+    background: linear-gradient(to right,  rgb(31, 40, 58) var(--navGradient),rgba(255,255,255,0) 100%);
+}
+
+.nav:hover {
+    --navGradient: 100%;
+}
+
+.nav:hover .menu{
+    transform: rotate(90deg);
 }
 
 .name {
+    font-size: 17px;
+    font-weight: bolder;
     opacity: 0%;
+    width: 40px;
     left: 10px;
     z-index: 3;
     position: fixed;
-    transition: display 2s;
 }
 
 .bigName {
@@ -95,16 +124,81 @@ body {
     transform: translate(var(--sfMover));
   }
 
+  .sf5 {
+    width:1440px; 
+    height: 773.31px;
+    left: 0;
+    position: absolute;
+    transform: translate(var(--sfMover));
+  }
+
   .reveal {
     opacity: 0%;
+  }
+
+  .headline {
+    padding: 10px;
+    padding-left: 0px;
+    width: 100%;
+    height: var(--headlineWidth);
+    background-color: rgb(98, 110, 143);
+  }
+
+  #secondHeadline {
+      padding: 0;
+      margin: 10px rgb(98, 110, 143);
+      height: 550px;
+      background-color: rgb(172, 191, 216);
   }
 
   .block {
     padding: 10px;
     padding-left: 0px;
-    width: 100%;
-    height: 1000px;
+    width: 900px;
+    height: 550px;
     background-color: rgb(98, 110, 143);
+  }
+
+  #experienceBlock {
+      width: 100%;
+  }
+
+  #projectBlock {
+    width: 100%;
+  }
+
+  #skillsBlock {
+    background-color: rgb(172, 191, 216);
+    width: 100%;
+    height: 530px;
+  }
+
+  .leftBar {
+    position: absolute;
+    left: 0px;
+    background-color: rgb(98, 110, 143);
+    width: 100px;
+    height: 750px;
+  }
+
+  #firstBlock {
+    background-color: transparent;
+    width: 300px;
+  }
+
+  #secondBlock {
+      position: absolute;
+      left: var(--secondBlockLeft);
+      width: 1500px;
+      height: 552px;
+
+  }
+  .bottomBar {
+    position: absolute;
+    background-color: rgb(98, 110, 143);
+    width: 100%;
+    height: var(--barHeight);
+    top: calc(1801px - var(--barHeight));
   }
 
   hr {
@@ -118,24 +212,25 @@ body {
     pointer-events: none;
     width: 100%;
     background-color: transparent;
+    height: 231px;
   }
 
-  #trans1 {
-    height: 400px;
-  }
-
-  #trans2 {
-    height: 500px;
-  }
+.fixBlock {
+    width: 100%;
+    height: 10px;
+    background-color: rgb(98, 110, 143);
+    position: absolute;
+    top: 770px;
+}
 
 .menu {
     opacity: 0%;
     z-index: 3;
     position: fixed;
-    top: 50px;
+    top: 70px;
     left: 10px;
     cursor: pointer;
-    transition: display 2s;
+    transition: transform 1s;
 }
 
 .containerOut {
@@ -144,13 +239,17 @@ body {
 }
 
 .containerItems {
+    padding-left: 75px;
     display: grid;
     height: 200px;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .profile {
-    width: 100%;
+    position: absolute;
+    top: 700px;
+    left: 20px;
+    width: var(--profileSize);
 }
 
 .iam {
@@ -158,12 +257,17 @@ body {
     font-size: 50px;
     margin-top: 20px;
     color: white;
-    margin-left: 20px;
+    margin-left: 95px;
 }
 
 .desBlock {
     position: absolute;
-    width: 700px;
+    z-index: 5;
+}
+
+.desBlock1 {
+    border-radius: 1px;
+    width: 350px;
     height: 350px;
     border: 3px solid white;
     top: 1120px;
@@ -171,7 +275,7 @@ body {
 }
 
 .desBlock2 {
-    position: absolute;
+    border-radius: 1px;
     width: 100px;
     height: 100px;
     border: 1px solid white;
@@ -180,17 +284,17 @@ body {
 }
 
 .desBlock3 {
-    position: absolute;
+    border-radius: 0px;
     width: 150px;
-    height: 200px;
+    height: 150px;
     background-color: white;
-    top: 1450px;
+    top: 1600px;
     right: 150px;
 }
 
 .desBlock4 {
-    position: absolute;
-    width: 300px;
+    border-radius: 0px;
+    width: 150px;
     height: 150px;
     border: 5px solid white;
     top: 1550px;
@@ -198,8 +302,8 @@ body {
 }
 
 .desBlock5 {
-    position: absolute;
-    width: 500px;
+    border-radius: 0px;
+    width: 300px;
     height: 300px;
     border: 1px solid white;
     top: 1300px;
@@ -207,7 +311,7 @@ body {
 }
 
 .desBlock6 {
-    position: absolute;
+    border-radius: 0px;
     width: 70px;
     height: 70px;
     background-color: white;
@@ -215,16 +319,8 @@ body {
     right: 400px;
 }
 
-.desBlock7 {
-    z-index: 10;
-    position: absolute;
-    width: 50%;
-    height: 650px;
-    top: 50px;
-}
-
 .desBlock8 {
-    position: absolute;
+    border-radius: 0px;
     width: 100px;
     height: 100px;
     border: 10px solid rgb(98, 110, 143);
@@ -233,7 +329,7 @@ body {
 }
 
 .desBlock9 {
-    position: absolute;
+    border-radius: 0px;
     width: 100px;
     height: 100px;
     background-color: rgb(98, 110, 143);
@@ -242,8 +338,8 @@ body {
 }
 
 .desBlock10 {
-    position: absolute;
-    width: 250px;
+    border-radius: 0px;
+    width: 150px;
     height: 150px;
     border: 5px solid rgb(98, 110, 143);
     top: 1880px;
@@ -252,61 +348,140 @@ body {
 
 
 .desBlock11 {
-    position: absolute;
+    border-radius: 0px;
     width: 70px;
     height: 70px;
-    background-color: rgb(98, 110, 143);
     top: 1762px;
     right: 100px;
+    background: linear-gradient(to top, rgb(98, 110, 143) 50%, white 0%, white 50%, white 0%);
 }
-
-.desBlock12 {
-    position: absolute;
-    width: 70px;
-    height: 35px;
-    background-color: white;
-    top: 1762px;
-    right: 100px;
-}
-
-#one {
-    left: 50px;
-    border-left: 3px solid rgb(98, 110, 143);
-    border-top: 3px solid rgb(98, 110, 143);
-    border-bottom: 3px solid rgb(98, 110, 143);
-}
-
-#two {
-    right: 50px;
-    border-right: 3px solid rgb(98, 110, 143);
-    border-top: 3px solid rgb(98, 110, 143);
-    border-bottom: 3px solid rgb(98, 110, 143);
-}
-
 
 .hi {
-    font-weight: bolder;
-    font-size: 50px;
-    margin-top: 20px;
-    text-align: center;
+    font-size: var(--nameFontSize);
+    margin-top: 0;
+    margin-bottom: 15px;
+    margin-left: 95px;
+    opacity: 0%;
+}
+
+#hi1 {
+    left: 0;
+    font-weight: 800;
     color: white;
 }
 
-.blob {
-    text-align: left;
-    width: 700px;
-    font-size: 30px;
-    margin-left: 20px;
+#hi2 {
+    left: 95px;
+    width: 600px;
+    font-size: calc(var(--nameFontSize) - 20px);
+    color: rgb(31, 40, 58);
+}
+
+
+.hiPre {
+    font-size: 20px;
+    margin-left: 75px;
+    color: white;
+}
+
+
+
+.blob1 {
+    z-index: 5;
+    background-color: rgb(98, 110, 143);
+    top: var(--blobTop);
+    position: absolute;
+    font-size: var(--blobFontSize);
+    margin-left: var(--blobLeft);
     margin-top: 30px;
     color: white;
+    border: 3px solid rgb(31, 40, 58);
+    padding: 10px;
+    width: var(--blobWidth);
+    opacity: 0%;
+}
+
+.blob2 {
+    z-index: 5;
+    top: calc(var(--blobTop) + 200px);
+    background-color: rgb(98, 110, 143);
+    right: 65px;
+    position: absolute;
+    font-size: var(--blobFontSize);
+    margin-top: 30px;
+    color: white;
+    border: 3px solid rgb(31, 40, 58);
+    padding: 10px;
+    width: var(--blobWidth);
+    opacity: 0%;
+}
+
+.blob3 {
+    z-index: 5;
+    top: calc(var(--blobTop) + 400px);
+    position: absolute;
+    font-size: var(--blobFontSize);
+    margin-left: var(--blobLeft);
+    margin-top: 30px;
+    color: white;
+    border: 3px solid rgb(31, 40, 58);
+    padding: 10px;
+    width: var(--blobWidth);
+    opacity: 0%;
+}
+
+.line1 {
+    z-index: 3;
+    position: absolute;
+    width: 250px;
+    right: 161px;
+    height: 130px;
+    border-top: solid 3px rgb(31, 40, 58);
+    border-right: solid 3px rgb(31, 40, 58);
+    top: 1100px;
+}
+
+.line2 {
+    z-index: 3;
+    position: absolute;
+    width: 235px;
+    left: 711px;
+    height: 130px;
+    border-left: solid 3px rgb(31, 40, 58);
+    border-top: solid 3px rgb(31, 40, 58);
+    top: 1300px;
 }
 
 .item {
-    width: 100px;
-    height: 100px;
+    width: var(--itemSize);
+    height: var(--itemSize);
     margin: 5px;
     background-size: contain;
-    border: solid 3px rgb(98, 110, 143);
+    /* background-color: tran; */
+    transition: transform 1s;
+}
+
+.item:hover {
+    transform: scale(1.1);
+}
+
+.skillName {
+    font-size: 50px;
+    margin: 50px;
+    margin-top: 170px;
+}
+
+.skillIcon {
+    padding: 10px;
+    margin: 50px;
+    width: 200px;
+    height: 200px;
+    margin-top: 20px;
+}
+
+.skillDescription {
+    margin: 50px;
+    width: 300px;
 }
 
 .workExperienceTit {
@@ -314,82 +489,144 @@ body {
     font-weight: bold;
     font-size: 50px;
     margin:10px;
-    margin-left: 20px;
+    margin-left: 95px;
 }
 
 .spin {
     width: 400px;
-    margin-left: 20px;
+    margin-left: 95px;
 }
 
 #fourthBlob {
+    color: white;
+    font-size: 20px;
     margin: 0;
-    margin-left: 20px;
+    margin-left: 95px;
 }
 
 ul {
+    margin-left: 75px;
     color: white;
-    font-size: 20px;
+    font-size: 25px;
+}
+li {
+    margin-top: 10px;
 }
 
-/* .triangle {
-    z-index: 2;
-    position: fixed;
-    width: 0;
-    height: 0;
-    border-right: 1500px solid transparent;
-    border-top: 100px solid #ccb7b4;
-    transition: width 2s;
-} */
+.desBlock13 {
+    border-radius: 0px;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(242,80,51);
+    top: 2350px;
+    right: 150px;
+}
+
+.desBlock14 {
+    border-radius: 0px;
+    width: 100px;
+    height: 300px;
+    background: linear-gradient(to top, rgb(242,80,51) 50%, white 0%, rgb(98, 110, 143) 50%, rgb(98, 110, 143) 0%);
+    top: 2048px;
+    right: 70px;
+}
+
+.desBlock15 {
+    border-radius: 0px;
+    width: 70px;
+    height: 70px;
+    border: 5px solid rgb(242,80,51);
+    top: 2320px;
+    right: 50px;
+}
+
+.desBlock16 {
+    border-radius: 1px;
+    width: 150px;
+    height: 100px;
+    border: 3px solid rgb(242,80,51);
+    top: 2262px;
+    right: 200px;
+}
+
+.projectTit {
+    color: white;
+    font-weight: bold;
+    font-size: 50px;
+    margin:10px;
+    margin-left: 95px;
+}
+
+.projectImg {
+    width: 200px;
+}
+
+.projectBlurb {
+    color: white;
+}
+
+.projectContainer {
+    height: 300px;
+    width: 100%;
+}
 
 .about {
-    background-color: transparent;
+    cursor: pointer;
     color: white;
-    right: 230px;
     z-index: 3;
-    border-radius: 5px;
-    height: 40px;
-    width: 80px;
     opacity: 0%;
     position: fixed; 
-    top: 20px; 
-    border : 1px solid;
-    transition: display 2s;
+    top: 120px; 
+    left: -20px;
 }
+
 .projects {
-    background-color: transparent;
+    cursor: pointer;
     color: white;
-    right: 130px;
     z-index: 3;
-    border-radius: 5px;
-    height: 40px;
-    width: 80px;
     opacity: 0%;
     position: fixed; 
-    top: 20px; 
-    border : 1px solid;
-    transition: display 2s;
+    top: 170px; 
+    left: -20px;
 }
 
 .experience {
-    background-color: transparent;
+    cursor: pointer;
     color: white;
-    right: 30px;
     z-index: 3;
-    border-radius: 5px;
-    height: 40px;
-    width: 80px;
     opacity: 0%;
     position: fixed; 
-    top: 20px; 
-    border : 1px solid;
-    transition: display 2s;
+    top: 220px; 
+    left: -20px;
 }
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
     :root {
-        --sfMover: -450px;
+        --sfMover: -500px;
+        --secondBlockLeft: 250px;
+        --blobLeft: 100px;
+        --profileSize: 300px;
+        --nameFontSize: 40px;
+        --headlineWidth: 100px;
+        --barHeight: 650px;
+        --blobWidth: 200px;
+        --blobFontSize: 15px;
+        --blobTop: 1000px;
+    }
+    .blob1 {
+        width: 100px;
+        top: 950px;
+        left: 170px;
+    }
+
+    .line1 {
+        border-top:none;
+        left:80px;
+    }
+    .line2 {
+        border-top: none;
+        left: 200px;
     }
 }
 
@@ -397,13 +634,29 @@ ul {
 @media only screen and (min-width: 600px) { 
     :root {
         --sfMover: -350px;
-    }   
+        --secondBlockLeft: 250px;
+        --blobLeft: 200px;
+        --profileSize: 300px;
+        --barHeight: 600px;
+        --headlineWidth: 200px;
+        --blobWidth: 200px;
+        --blobFontSize: 15px;
+        --blobTop: 1000px;
+        }   
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {   
     :root {
         --sfMover: -250px;
+        --secondBlockLeft: 250px;
+        --blobLeft: 300px;
+        --blobWidth: 400px;
+        --blobFontSize: 20px;
+        --blobTop: 1000px;
+    }
+    .line2 {
+        border-top: none;
     }
 }
 
@@ -411,12 +664,28 @@ ul {
 @media only screen and (min-width: 992px) {
     :root {
         --sfMover: -150px;
+        --blobMargin: 850px;
+        --secondBlockLeft: 400px;
+        --blobLeft: 450px;
+        --profileSize: 450px;
+        --nameFontSize: 70px;
+        --barHeight: 400px;
     }
+
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1100px) {
     :root {
         --sfMover: 0px;
+        --blobMargin: 950px;
+        --secondBlockLeft: 550px;
+        --blobLeft: 600px;
+        --profileSize: 600px;
+        --barHeight: 232px;
+        
+    }
+    .line2 {
+        border-top: solid 3px rgb(31, 40, 58);
     }
 }

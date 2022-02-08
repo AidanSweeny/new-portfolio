@@ -1,18 +1,61 @@
 var open = false;
 var menuVisible = false;
 var itemsVisible = false;
+var count = 0;
+var skills = ["javascript","rubyonrails", "python", "java", "aws","sql", "vhdl", "mongodb", "react", "node", "jquery", "css", "html", "ruby", "bootstrap", "datadog", "rspec", "heroku", "agile"];
+var projects = [["weather","Weather application that uses a public API to show weather in a searched area.","https://aidansweeny.github.io/weather-dashboard/", "https://github.com/AidanSweeny/weather-dashboard/"], ["life","Life application","https://aidansweeny.github.io/life/","https://github.com/AidanSweeny/life/"], ["financhill","Financial management application.","https://github.com/GabeSucich/BudgetingApp",]];
 
 function reveal() {
     var reveals = document.querySelectorAll(".reveal");
-  
+    var revealDelay = 0;
     for (var i = 0; i < reveals.length; i++) {
-      var windowHeight = window.innerHeight;
-      var elementTop = reveals[i].getBoundingClientRect().top;
-      var elementVisible = 150;
+        var windowHeight = window.innerHeight;
+        var elementTop = reveals[i].getBoundingClientRect().top;
+        var elementVisible = 150;
+        
+        if (elementTop < windowHeight - 100 && reveals[i].classList[0] == "item") {
+            $("#"+(reveals[i].id)).delay(revealDelay).animate({"opacity":"100%"});
+            revealDelay += 50;
+        } 
+        else if (elementTop < windowHeight - elementVisible) {
+            $("."+(reveals[i].classList[0])).animate({"opacity":"100%"});
+        }
 
-      if (elementTop < windowHeight - elementVisible) {
-        $("."+(reveals[i].classList[0])).animate({"opacity":"100%"});
-      } 
+        
+    }
+}
+
+function showUp() {
+    var reveals = document.querySelectorAll(".showUp");
+    // var revealDelay = 0;
+    for (var i = 0; i < reveals.length; i++) {
+        var windowHeight = window.innerHeight;
+        var elementTop = reveals[i].getBoundingClientRect().top;
+        var elementVisible = 150;
+        
+        // if (elementTop < windowHeight - 100 && reveals[i].classList[0] == "item") {
+        //     $("#"+(reveals[i].id)).delay(revealDelay).animate({"opacity":"100%"});
+        //     revealDelay += 50;
+        // } 
+        if (elementTop < windowHeight - elementVisible) {
+            $("."+(reveals[i].classList[0])).animate({"opacity":"100%", "left": "95px"});
+        }  
+    }
+}
+
+function circle() {
+    var squares = document.querySelectorAll(".desBlock");
+
+    for (var i = 0; i < squares.length; i++) {
+        var windowHeight = window.innerHeight;
+        var elementTop = squares[i].getBoundingClientRect().top;
+        var elementVisible = 300;
+
+        var borderRadius = window.getComputedStyle(squares[i]).getPropertyValue("border-radius");
+        // console.log(((windowHeight - elementVisible) - elementTop)/100)
+        if (elementTop < windowHeight - elementVisible){
+            squares[i].style.borderRadius = `${((windowHeight - elementVisible) - elementTop)/10}px`;
+        }
     }
 }
 
@@ -21,98 +64,104 @@ $(".parallax").on('scroll', function(){
         $(".menu").animate({"opacity":"100%"});
         $(".name").animate({"opacity":"100%"});
         $(".bigName").animate({"opacity":"0%"});
+        $(".nav").animate({"width": "95px"});
+
         menuVisible = true;
     }
+
     reveal();
+    showUp();
+    circle()
 });
 
 
 window.onload = function() {
-    var skills = ["javascript","rubyonrails", "python", "java", "aws","sql", "vhdl", "mongodb", "react", "node", "jquery", "css", "html", "ruby", "bootstrap", "datadog", "rspec", "heroku", "agile"];
     displaySkills(skills);
+    displayProjects(projects);
 }
 
 function displaySkills(skills){
     for (var item of skills){
         var div = document.createElement("img");
         var elem = document.getElementById("cI");
-        div.setAttribute("class", "item reveal");
-        div.setAttribute("src", item+".png");
+        div.setAttribute("class", "item reveal ");
+        div.setAttribute("id", item);
+        div.setAttribute("src", item + ".png");
         elem.appendChild(div);
-
     }
 }
 
-// $('*').click(function(event){
-//     event.preventDefault();
-//     mvmt(event, 1)
-//     mvmt(event, 11)
-//     mvmt(event, 21)
-// })
+function displayProjects(projects){
+    everyOther = 0;
+    for (var project of projects){
+        var div = document.createElement("div");
+        var img = document.createElement("img");
+        var blurb = document.createElement("p");
+        div.setAttribute("class", "projectContainer")
+        blurb.innerHTML = project[1] + "<br>" + project[2];
+        var elem = document.getElementById("projectBlock");
+        img.setAttribute("class", "projectImg reveal");
+        blurb.setAttribute("class", "projectBlurb reveal");
+        img.setAttribute("src", project[0] + ".jpg");
+        if (everyOther%2 == 0) {
+            img.setAttribute("style", "float: right;");
+        }
+        else {
+            img.setAttribute("style", "float: left;");
+        }
+        div.appendChild(img);
+        div.appendChild(blurb);
+        elem.appendChild(div);
+        everyOther++;
+    }
+}
 
-// function sleep(milliseconds) {
-//     const date = Date.now();
-//     let currentDate = null;
-//     do {
-//       currentDate = Date.now();
-//     } while (currentDate - date < milliseconds);
-//   }
-// var id = null;
+$(document).on("mouseenter", ".item",function(event){
+    event.preventDefault();
+    $(".skillName").text(event.target.id);
+    $(".skillIcon").attr("src", event.target.id + ".png");
+    $(".skillIcon").attr("style","border: 5px solid rgb(98, 110, 143);");
+    $(".skillIcon").attr("class", "skillIcon desBlock");
+})
 
-// function mvmt(event, size){
-//     var interval = size;
-//     var xpos = event.clientX - size/2;
-//     var ypos = event.clientY - size/2;
-//     var elem = document.getElementById("parent");
-//     id = setInterval(frame, 20);
-//     var div = document.createElement("div");
-//     div.style.position = "fixed";
-//     // div.style.border = "1px, solid, linear-gradient(to right, blue, white)";
-//     div.setAttribute("id", "gradient");
-//     div.style.borderRadius = "50%";
-//     elem.appendChild(div);
-//     function frame() {
-//         interval += 2;        
-//         xpos--;
-//         ypos--;
-//         div.style.left = xpos + 'px';
-//         div.style.top = ypos + 'px';
-//         div.style.height = interval + 'px';
-//         div.style.width = interval + 'px';
-//     }
-// }
-
-$(".icon").on("click", function(event){
+$(".nav").hover(function(event){
     event.preventDefault();
     if(open){
-        $(".about").animate({"opacity": "0%"})
-        $(".projects").animate({"opacity": "0%"})
-        $(".experience").animate({"opacity": "0%"})
-        $(".triangle").css("width","0px")
+        $(".menu").animate({"transform": "rotate(45deg)"});
+        $(".about").animate({"opacity": "0%", "left": "-20px"});
+        $(".projects").animate({"opacity": "0%", "left": "-20px"});
+        $(".experience").animate({"opacity": "0%", "left": "-20px"});
         open = false;
     }
     else {
-        $(".about").animate({"opacity": "100%"}, speed = 2000)
-        $(".projects").animate({"opacity": "100%"}, speed = 2000)
-        $(".experience").animate({"opacity": "100%"}, speed = 2000)
-        $(".triangle").css("width","1500px")
+        $(".menu").animate({"transform": "rotate(45deg)"});
+        $(".about").animate({"opacity": "100%", "left": "10px"});
+        $(".projects").animate({"opacity": "100%", "left": "10px"});
+        $(".experience").animate({"opacity": "100%", "left": "10px"});
         open = true;
     }
 })
 
 $('.projects').on("click", function(event) {
-    event.preventDefault()
-    location.assign("/projects")
+    event.preventDefault();
+    console.log("yes")
+    $('.parallax').animate({
+        scrollTop: $(".projectTit").offset().top},
+        1500);
 })
 
 $('.about').on("click", function(event) {
     event.preventDefault()
-    location.assign("/")
+    $('.parallax').animate({
+        scrollTop: $(".projectTit").offset().top},
+        1500);
 })
 
 $('.experience').on("click", function(event) {
     event.preventDefault()
-    location.assign("/experience")
+    $('.parallax').animate({
+        scrollTop: $(".workExperienceTit").offset().top},
+        1500);
 })
 
 
