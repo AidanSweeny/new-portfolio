@@ -19,6 +19,9 @@
   },
   "homepage": "https://github.com/AidanSweeny/new-portfolio#readme",
   "dependencies": {
-    "express": "^4.17.2"
+    "express": "^4.17.2",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.1.0",
+    "sequelize": "^6.3.4"
   }
 }
