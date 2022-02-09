@@ -11,6 +11,10 @@
     --blobFontSize: 20px;
     --blobTop: 1000px;
     --blobLeft: 600px;
+    --profileTop: 700px;
+    --desBlockSize: 50px;
+    --buttonHeight: 35px;
+    --experienceHeight: 650px;
 }
 
 body {
@@ -141,13 +145,13 @@ body {
     padding-left: 0px;
     width: 100%;
     height: var(--headlineWidth);
-    background-color: rgb(98, 110, 143);
+    background-color: rgb(31, 40, 58);
   }
 
   #secondHeadline {
       padding: 0;
       margin: 10px rgb(98, 110, 143);
-      height: 550px;
+      height: 600px;
       background-color: rgb(172, 191, 216);
   }
 
@@ -161,10 +165,14 @@ body {
 
   #experienceBlock {
       width: 100%;
+      height: var(--experienceHeight);
   }
-
+  
   #projectBlock {
+    position: relative;
     width: 100%;
+    height: 1200px;
+    background-color: rgb(31, 40, 58);
   }
 
   #skillsBlock {
@@ -195,7 +203,7 @@ body {
   }
   .bottomBar {
     position: absolute;
-    background-color: rgb(98, 110, 143);
+    background-color: rgb(31, 40, 58);
     width: 100%;
     height: var(--barHeight);
     top: calc(1801px - var(--barHeight));
@@ -247,7 +255,7 @@ body {
 
 .profile {
     position: absolute;
-    top: 700px;
+    top: var(--profileTop);
     left: 20px;
     width: var(--profileSize);
 }
@@ -261,86 +269,94 @@ body {
 }
 
 .desBlock {
-    position: absolute;
     z-index: 5;
 }
 
 .desBlock1 {
+    position: absolute;
     border-radius: 1px;
-    width: 350px;
-    height: 350px;
+    width: calc(var(--desBlockSize) * 7);
+    height: calc(var(--desBlockSize) * 7);
     border: 3px solid white;
     top: 1120px;
     left: 50px;
 }
 
 .desBlock2 {
+    position: absolute;
     border-radius: 1px;
-    width: 100px;
-    height: 100px;
+    width: calc(var(--desBlockSize) * 2);
+    height: calc(var(--desBlockSize) * 2);
     border: 1px solid white;
     top: 1650px;
     right: 10px;
 }
 
 .desBlock3 {
+    position: absolute;
     border-radius: 0px;
-    width: 150px;
-    height: 150px;
+    width: calc(var(--desBlockSize) * 3);
+    height: calc(var(--desBlockSize) * 3);
     background-color: white;
     top: 1600px;
     right: 150px;
 }
 
 .desBlock4 {
+    position: absolute;
     border-radius: 0px;
-    width: 150px;
-    height: 150px;
+    width: calc(var(--desBlockSize) * 3);
+    height: calc(var(--desBlockSize) * 3);
     border: 5px solid white;
     top: 1550px;
     right: 70px;
 }
 
 .desBlock5 {
+    position: absolute;
     border-radius: 0px;
-    width: 300px;
-    height: 300px;
+    width: calc(var(--desBlockSize) * 6);
+    height: calc(var(--desBlockSize) * 6);
     border: 1px solid white;
     top: 1300px;
     right: 500px;
 }
 
 .desBlock6 {
+    position: absolute;
     border-radius: 0px;
-    width: 70px;
-    height: 70px;
+    width: calc(var(--desBlockSize) * 1);
+    height: calc(var(--desBlockSize) * 1);
     background-color: white;
     top: 1700px;
     right: 400px;
 }
 
 .desBlock8 {
+    position: absolute;
     border-radius: 0px;
-    width: 100px;
-    height: 100px;
+    width: calc(var(--desBlockSize) * 2);
+    height: calc(var(--desBlockSize) * 2);
     border: 10px solid rgb(98, 110, 143);
     top: 1800px;
     right: 10px;
 }
 
 .desBlock9 {
+    position: absolute;
     border-radius: 0px;
-    width: 100px;
-    height: 100px;
+    width: calc(var(--desBlockSize) * 2);
+    height: calc(var(--desBlockSize) * 2);
     background-color: rgb(98, 110, 143);
     top: 1850px;
     right: 150px;
 }
 
 .desBlock10 {
+    position: absolute;
     border-radius: 0px;
-    width: 150px;
-    height: 150px;
+    width: calc(var(--desBlockSize) * 3);
+    height: calc(var(--desBlockSize) * 3);
     border: 5px solid rgb(98, 110, 143);
     top: 1880px;
     right: 70px;
@@ -348,10 +364,11 @@ body {
 
 
 .desBlock11 {
+    position: absolute;
     border-radius: 0px;
-    width: 70px;
-    height: 70px;
-    top: 1762px;
+    width: calc(var(--desBlockSize) * 1);
+    height: calc(var(--desBlockSize) * 1);
+    top: 1776px;
     right: 100px;
     background: linear-gradient(to top, rgb(98, 110, 143) 50%, white 0%, white 50%, white 0%);
 }
@@ -374,7 +391,7 @@ body {
     left: 95px;
     width: 600px;
     font-size: calc(var(--nameFontSize) - 20px);
-    color: rgb(31, 40, 58);
+    color: rgb(98, 110, 143);
 }
 
 
@@ -474,8 +491,8 @@ body {
 .skillIcon {
     padding: 10px;
     margin: 50px;
-    width: 200px;
-    height: 200px;
+    width: calc(var(--itemSize) * 2);
+    height: calc(var(--itemSize) * 2);
     margin-top: 20px;
 }
 
@@ -498,19 +515,43 @@ body {
 }
 
 #fourthBlob {
-    color: white;
+    font-weight: bold;
+    color: rgb(31, 40, 58);
     font-size: 20px;
     margin: 0;
     margin-left: 95px;
 }
 
 ul {
+    list-style-type: none;
     margin-left: 75px;
     color: white;
-    font-size: 25px;
+    font-size: var(--blobFontSize);
 }
 li {
-    margin-top: 10px;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    color: transparent;
+    padding-left: 40px;
+    margin: 40px;
+    margin-left: -30px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    transition: color .5s;
+    cursor: pointer;
+}
+
+li:hover {
+    color: white;
+    text-shadow: none;
+}
+
+.bullet {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border: 2px solid rgb(31, 40, 58);
+    margin-top: 5px;
+    left: 100px;
 }
 
 .desBlock13 {
@@ -558,7 +599,7 @@ li {
 }
 
 .projectImg {
-    width: 200px;
+    width: 400px;
 }
 
 .projectBlurb {
@@ -609,10 +650,14 @@ li {
         --profileSize: 300px;
         --nameFontSize: 40px;
         --headlineWidth: 100px;
-        --barHeight: 650px;
+        --barHeight: 500px;
         --blobWidth: 200px;
         --blobFontSize: 15px;
         --blobTop: 1000px;
+        --profileTop: 630px;
+        --desBlockSize: 30px;
+        --itemSize: 50px;
+        --experienceHeight: 900px;
     }
     .blob1 {
         width: 100px;
@@ -625,8 +670,19 @@ li {
         left:80px;
     }
     .line2 {
-        border-top: none;
-        left: 200px;
+        left: 250px;
+        width: 50px;
+
+    }
+    .containerOut {
+        grid-template-columns: 1fr 2fr;
+    }
+    .containerItems {
+        grid-template-columns: 1fr 1fr;
+    }
+    .bottomBar {
+        top: 1200px;
+        background-color: rgb(98, 110, 143);
     }
 }
 
@@ -642,8 +698,25 @@ li {
         --blobWidth: 200px;
         --blobFontSize: 15px;
         --blobTop: 1000px;
-        }   
+        --profileTop: 700px;
+        --desBlockSize: 50px;
+        --itemSize: 50px;
+        --experienceHeight: 700px;
+        }  
+    .line2 {
+        left: 250px;
+    } 
+    .containerOut {
+        grid-template-columns: 1fr 2fr;
+    }
+    .containerItems {
+        grid-template-columns: 1fr 1fr;
+    }
+    .bottomBar{
+        background-color: rgb(98, 110, 143);
+    }
 }
+
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {   
@@ -654,10 +727,16 @@ li {
         --blobWidth: 400px;
         --blobFontSize: 20px;
         --blobTop: 1000px;
+        --itemSize: 100px;
+        --experienceHeight: 650px;
     }
     .line2 {
-        border-top: none;
+        left: 500px;
     }
+    .containerItems {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -671,7 +750,12 @@ li {
         --nameFontSize: 70px;
         --barHeight: 400px;
     }
-
+    .line2 {
+        left: 720px;
+    }
+    .containerOut {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
@@ -687,5 +771,8 @@ li {
     }
     .line2 {
         border-top: solid 3px rgb(31, 40, 58);
+    }
+    .bottomBar {
+        background-color: rgb(31, 40, 58);
     }
 }

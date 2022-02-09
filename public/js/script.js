@@ -1,6 +1,7 @@
 var open = false;
 var menuVisible = false;
 var itemsVisible = false;
+var itemFaded = true;
 var count = 0;
 var skills = ["javascript","rubyonrails", "python", "java", "aws","sql", "vhdl", "mongodb", "react", "node", "jquery", "css", "html", "ruby", "bootstrap", "datadog", "rspec", "heroku", "agile"];
 var projects = [["weather","Weather application that uses a public API to show weather in a searched area.","https://aidansweeny.github.io/weather-dashboard/", "https://github.com/AidanSweeny/weather-dashboard/"], ["life","Life application","https://aidansweeny.github.io/life/","https://github.com/AidanSweeny/life/"], ["financhill","Financial management application.","https://github.com/GabeSucich/BudgetingApp",]];
@@ -11,7 +12,7 @@ function reveal() {
     for (var i = 0; i < reveals.length; i++) {
         var windowHeight = window.innerHeight;
         var elementTop = reveals[i].getBoundingClientRect().top;
-        var elementVisible = 150;
+        var elementVisible = 250;
         
         if (elementTop < windowHeight - 100 && reveals[i].classList[0] == "item") {
             $("#"+(reveals[i].id)).delay(revealDelay).animate({"opacity":"100%"});
@@ -27,16 +28,11 @@ function reveal() {
 
 function showUp() {
     var reveals = document.querySelectorAll(".showUp");
-    // var revealDelay = 0;
     for (var i = 0; i < reveals.length; i++) {
         var windowHeight = window.innerHeight;
         var elementTop = reveals[i].getBoundingClientRect().top;
         var elementVisible = 150;
-        
-        // if (elementTop < windowHeight - 100 && reveals[i].classList[0] == "item") {
-        //     $("#"+(reveals[i].id)).delay(revealDelay).animate({"opacity":"100%"});
-        //     revealDelay += 50;
-        // } 
+
         if (elementTop < windowHeight - elementVisible) {
             $("."+(reveals[i].classList[0])).animate({"opacity":"100%", "left": "95px"});
         }  
@@ -50,9 +46,7 @@ function circle() {
         var windowHeight = window.innerHeight;
         var elementTop = squares[i].getBoundingClientRect().top;
         var elementVisible = 300;
-
-        var borderRadius = window.getComputedStyle(squares[i]).getPropertyValue("border-radius");
-        // console.log(((windowHeight - elementVisible) - elementTop)/100)
+        console.log();
         if (elementTop < windowHeight - elementVisible){
             squares[i].style.borderRadius = `${((windowHeight - elementVisible) - elementTop)/10}px`;
         }
@@ -64,6 +58,7 @@ $(".parallax").on('scroll', function(){
         $(".menu").animate({"opacity":"100%"});
         $(".name").animate({"opacity":"100%"});
         $(".bigName").animate({"opacity":"0%"});
+        $(".bigName").css("pointer-events","none");
         $(".nav").animate({"width": "95px"});
 
         menuVisible = true;
@@ -74,6 +69,19 @@ $(".parallax").on('scroll', function(){
     circle()
 });
 
+$(".listFade").on('click', function(event){
+    event.preventDefault();
+    if (itemFaded){
+        $(".listFade" + event.target.id).css("color", "white");
+        $(".listFade" + event.target.id).css("text-shadow", "none");
+        itemFaded = false;
+    }
+    else{
+        $(".listFade" + event.target.id).css("color", "transparent");
+        $(".listFade" + event.target.id).css("text-shadow", "0 0 5px rgba(255, 255, 255, 0.5)");
+        itemFaded = true;
+    }
+});
 
 window.onload = function() {
     displaySkills(skills);
