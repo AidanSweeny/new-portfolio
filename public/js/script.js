@@ -4,7 +4,7 @@ var itemsVisible = false;
 var itemFaded = true;
 var count = 0;
 var skills = ["javascript","rubyonrails", "python", "java", "aws","sql", "vhdl", "mongodb", "react", "node", "jquery", "css", "html", "ruby", "bootstrap", "datadog", "rspec", "heroku", "agile"];
-var projects = [["weather","Weather application that uses a public API to show weather in a searched area.","https://aidansweeny.github.io/weather-dashboard/", "https://github.com/AidanSweeny/weather-dashboard/"], ["life","Life application","https://aidansweeny.github.io/life/","https://github.com/AidanSweeny/life/"], ["financhill","Financial management application.","https://github.com/GabeSucich/BudgetingApp",]];
+var projects = [["weather","Weather App","Weather application that uses a public API to show weather in a searched area.","https://aidansweeny.github.io/weather-dashboard/", "https://github.com/AidanSweeny/weather-dashboard/"], ["life","L.I.F.E.","Life application","https://aidansweeny.github.io/life/","https://github.com/AidanSweeny/life/"], ["financhill","Financhill","Financial management application.","https://github.com/GabeSucich/BudgetingApp",]];
 
 function reveal() {
     var reveals = document.querySelectorAll(".reveal");
@@ -105,11 +105,18 @@ function displayProjects(projects){
         var div = document.createElement("div");
         var img = document.createElement("img");
         var blurb = document.createElement("p");
+        var repo = document.createElement("a");
+        var projName = document.createElement("h3");
         div.setAttribute("class", "projectContainer")
-        blurb.innerHTML = project[1] + "<br>" + project[2];
+        blurb.innerHTML = project[2];
+        repo.innerHTML = "Repository";
+        projName.innerHTML = project[1];
+        projName.setAttribute("class", "projectName");
+        repo.setAttribute("href", project[3]);
         var elem = document.getElementById("projectBlock");
         img.setAttribute("class", "projectImg reveal");
         blurb.setAttribute("class", "projectBlurb reveal");
+        repo.setAttribute("class", "repo reveal");
         img.setAttribute("src", project[0] + ".jpg");
         if (everyOther%2 == 0) {
             img.setAttribute("style", "float: right;");
@@ -118,7 +125,16 @@ function displayProjects(projects){
             img.setAttribute("style", "float: left;");
         }
         div.appendChild(img);
+        div.appendChild(projName);
         div.appendChild(blurb);
+        if (project.length > 4){
+            var deployed = document.createElement("a");
+            deployed.innerHTML = "Deployed Website";
+            deployed.setAttribute("href", project[4]);
+            deployed.setAttribute("class", "deployed reveal");
+            div.appendChild(deployed);
+        }
+        div.appendChild(repo);
         elem.appendChild(div);
         everyOther++;
     }
@@ -152,23 +168,22 @@ $(".nav").hover(function(event){
 
 $('.projects').on("click", function(event) {
     event.preventDefault();
-    console.log("yes")
     $('.parallax').animate({
-        scrollTop: $(".projectTit").offset().top},
+        scrollTop: 2200},
         1500);
 })
 
 $('.about').on("click", function(event) {
     event.preventDefault()
     $('.parallax').animate({
-        scrollTop: $(".projectTit").offset().top},
+        scrollTop: 550},
         1500);
 })
 
 $('.experience').on("click", function(event) {
     event.preventDefault()
     $('.parallax').animate({
-        scrollTop: $(".workExperienceTit").offset().top},
+        scrollTop: 1270},
         1500);
 })
 
