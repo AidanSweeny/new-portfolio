@@ -17,6 +17,10 @@
     --experienceHeight: 650px;
     --secondHeadlineHeight: 600px;
     --spinWidth: 400px;
+    --projImgWidth: 470px;
+    --projectContainerHeight: 450px;
+    --fixBlockTop: 3040px;
+    --projectBlockHeight: 1700px;
 }
 
 body {
@@ -173,7 +177,7 @@ body {
   #projectBlock {
     position: relative;
     width: 100%;
-    height: 1600px;
+    height: var(--projectBlockHeight);
     background-color: rgb(31, 40, 58);
   }
 
@@ -225,6 +229,24 @@ body {
     background-color: rgb(98, 110, 143);
     position: absolute;
     top: 770px;
+}
+
+.fixBlock2 {
+    z-index: 5;
+    width: 100%;
+    height: 30px;
+    background-color: rgb(98, 110, 143);
+    position: absolute;
+    top: 1600px;
+}
+
+.fixBlock3 {
+    z-index: 5;
+    width: 100%;
+    height: 40px;
+    background-color: white;
+    position: absolute;
+    top: var(--fixBlockTop);
 }
 
 .menu {
@@ -412,6 +434,11 @@ body {
     padding: 10px;
     width: var(--blobWidth);
     opacity: 0%;
+    transition: box-shadow 1s;
+}
+
+.blob1:hover,.blob2:hover,.blob3:hover {
+    box-shadow: 0 10px 10px white;
 }
 
 .blob2 {
@@ -427,6 +454,7 @@ body {
     padding: 10px;
     width: var(--blobWidth);
     opacity: 0%;
+    transition: box-shadow 1s;
 }
 
 .blob3 {
@@ -441,6 +469,7 @@ body {
     padding: 10px;
     width: var(--blobWidth);
     opacity: 0%;
+    transition: box-shadow 1s;
 }
 
 .line1 {
@@ -470,11 +499,13 @@ body {
     height: var(--itemSize);
     margin: 5px;
     border: 2px solid  rgb(31, 40, 58);   
-    transition: transform 1s;
+    transition: transform 1s, box-shadow 1s;
+
 }
 
 .item:hover {
     transform: scale(1.2);
+    box-shadow: 0 10px 10px white;
 }
 
 .skillName {
@@ -595,7 +626,8 @@ li:hover {
 }
 
 .projectImg {
-    width: 400px;
+    width: var(--projImgWidth);
+    margin: 20px;
 }
 
 .projectBlurb {
@@ -606,8 +638,14 @@ li:hover {
 .projectContainer {
     border: 2px solid white;
     margin: 20px;
-    height: 400px;
+    height: var(--projectContainerHeight);
     margin-left: 100px;
+    transition: transform 1s, box-shadow 1s;
+}
+
+.projectContainer:hover {
+    transform: scale(1.01);
+    box-shadow: 0 10px 10px white;
 }
 
 .projectName {
@@ -619,11 +657,13 @@ li:hover {
 .repo {
     margin: 20px;
     color: rgb(98, 110, 143);
+    font-size: 15px;
 }
 
 .deployed {
     margin: 20px;
     color: rgb(98, 110, 143);
+    font-size: 15px;
 }
 
 .about {
@@ -656,6 +696,20 @@ li:hover {
     left: -20px;
 }
 
+.bottomContact {
+    z-index: 5;
+    background-color: rgb(98, 110, 143);
+    width: 100%;
+    height: 300px;
+    position: absolute;
+    bottom: 0;
+}
+.contact {
+    color: white;
+    float: right;
+    margin: 20px;
+}
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
     :root {
@@ -675,6 +729,10 @@ li:hover {
         --experienceHeight: 900px;
         --secondHeadlineHeight: 770px;
         --spinWidth: 300px;
+        --projImgWidth: 270px;
+        --projectContainerHeight: 600px;
+        --fixBlockTop: 3250px;
+        --projectBlockHeight: 2300px;
     }
     .blob1 {
         width: 100px;
@@ -701,6 +759,14 @@ li:hover {
         top: 1200px;
         background-color: rgb(98, 110, 143);
     }
+    .projectImg {
+        margin-right: 10px;
+        margin-left: 10px;
+        float:middle;
+    }
+    .fixBlock2 {
+        background-color: rgb(31, 40, 58);
+    }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -722,6 +788,10 @@ li:hover {
         --secondHeadlineHeight: 770px;
         --spinWidth: 400px;
         --nameFontSize: 40px;
+        --projImgWidth: 300px;
+        --projectContainerHeight: 550px;
+        --fixBlockTop: 3200px;
+        --projectBlockHeight: 2100px;
         }  
     .line2 {
         left: 250px;
@@ -734,6 +804,9 @@ li:hover {
     }
     .bottomBar{
         background-color: rgb(98, 110, 143);
+    }
+    .fixBlock2 {
+        background-color: rgb(31, 40, 58);
     }
 }
 
@@ -751,6 +824,10 @@ li:hover {
         --experienceHeight: 650px;
         --secondHeadlineHeight: 700px;
         --nameFontSize: 70px;
+        --projImgWidth: 400px;
+        --projectContainerHeight: 500px;
+        --fixBlockTop: 3150px;
+        --projectBlockHeight: 2100px;
     }
     .line2 {
         left: 500px;
@@ -778,12 +855,19 @@ li:hover {
         --nameFontSize: 70px;
         --barHeight: 400px;
         --secondHeadlineHeight: 600px;
+        --projImgWidth: 460px;
+        --projectContainerHeight: 450px;
+        --fixBlockTop: 3100px;
+        --projectBlockHeight: 2000px;
     }
     .line2 {
         left: 720px;
     }
     .containerOut {
         grid-template-columns: 2fr 1fr;
+    }
+    .fixBlock2 {
+        background-color: rgb(98, 110, 143);
     }
 }
 
@@ -796,6 +880,8 @@ li:hover {
         --blobLeft: 600px;
         --profileSize: 600px;
         --barHeight: 232px;
+        --fixBlockTop: 3040px;
+        --projectBlockHeight: 2000px;
         
     }
     .line2 {
@@ -807,4 +893,5 @@ li:hover {
     .containerOut {
         grid-template-columns: 1fr 500px;
     }
+    
 }
