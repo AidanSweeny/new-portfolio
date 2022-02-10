@@ -3,7 +3,7 @@ var menuVisible = false;
 var itemsVisible = false;
 var itemFaded = true;
 var count = 0;
-var skills = ["javascript","rubyonrails", "python", "java", "aws","sql", "vhdl", "mongodb", "react", "node", "jquery", "css", "html", "ruby", "bootstrap", "datadog", "rspec", "heroku", "agile"];
+var skills = [["javascript","Javascript"],["rubyonrails", "Ruby on Rails"], ["python", "Python"], ["java", "Java"], ["aws", "AWS"],["sql", "SQL"], ["vhdl", "VHDL"], ["mongodb", "MongoDB"], ["react", "React"], ["node", "Node.js"], ["jquery", "Jquery.js"], ["css", "CSS"], ["html", "HTML"], ["ruby", "Ruby"], ["bootstrap", "Bootstrap"], ["datadog", "Datadog"], ["rspec", "Rspec"], ["heroku", "Heroku"], ["agile", "Agile"]];
 var projects = [["weather","Weather App","Weather application that uses a public API to show weather in a searched area.","https://aidansweeny.github.io/weather-dashboard/", "https://github.com/AidanSweeny/weather-dashboard/"], ["life","L.I.F.E.","Life application","https://aidansweeny.github.io/life/","https://github.com/AidanSweeny/life/"], ["financhill","Financhill","Financial management application.","https://github.com/GabeSucich/BudgetingApp",]];
 
 function reveal() {
@@ -93,8 +93,9 @@ function displaySkills(skills){
         var div = document.createElement("img");
         var elem = document.getElementById("cI");
         div.setAttribute("class", "item reveal ");
-        div.setAttribute("id", item);
-        div.setAttribute("src", item + ".png");
+        div.setAttribute("id", item[0]);
+        div.setAttribute("title", item[1]);
+        div.setAttribute("src", item[0] + ".png");
         elem.appendChild(div);
     }
 }
@@ -142,7 +143,7 @@ function displayProjects(projects){
 
 $(document).on("mouseenter", ".item",function(event){
     event.preventDefault();
-    $(".skillName").text(event.target.id);
+    $(".skillName").text(event.target.title);
     $(".skillIcon").attr("src", event.target.id + ".png");
     $(".skillIcon").attr("style","border: 5px solid rgb(98, 110, 143);");
     $(".skillIcon").attr("class", "skillIcon desBlock");
