@@ -703,11 +703,20 @@ li:hover {
     height: 300px;
     position: absolute;
     bottom: 0;
+    text-align: center;
+
 }
 .contact {
+    display: inline-block;
     color: white;
-    float: right;
     margin: 20px;
+
+}
+
+#conInfo {
+    margin-top: 16px;
+    font-size: 20px;
+    color:rgb(31, 40, 58);
 }
 
 /* Extra small devices (phones, 600px and down) */
@@ -731,7 +740,7 @@ li:hover {
         --spinWidth: 300px;
         --projImgWidth: 270px;
         --projectContainerHeight: 600px;
-        --fixBlockTop: 3250px;
+        --fixBlockTop: 3350px;
         --projectBlockHeight: 2300px;
     }
     .blob1 {

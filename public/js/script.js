@@ -34,7 +34,7 @@ function showUp() {
         var elementVisible = 150;
 
         if (elementTop < windowHeight - elementVisible) {
-            $("."+(reveals[i].classList[0])).animate({"opacity":"100%", "left": "95px"});
+            $("."+(reveals[i].classList[0])).animate({"opacity":"100%", "top": "95px"});
         }  
     }
 }
