@@ -4,7 +4,7 @@ var itemsVisible = false;
 var itemFaded = true;
 var count = 0;
 var skills = [["javascript","Javascript"],["rubyonrails", "Ruby on Rails"], ["python", "Python"], ["java", "Java"], ["aws", "AWS"],["sql", "SQL"], ["vhdl", "VHDL"], ["mongodb", "MongoDB"], ["react", "React"], ["node", "Node.js"], ["jquery", "Jquery.js"], ["css", "CSS"], ["html", "HTML"], ["ruby", "Ruby"], ["bootstrap", "Bootstrap"], ["datadog", "Datadog"], ["rspec", "Rspec"], ["heroku", "Heroku"], ["agile", "Agile"]];
-var projects = [["weather","Weather App","Weather application that uses a public API to show weather in a searched area.","https://aidansweeny.github.io/weather-dashboard/", "https://github.com/AidanSweeny/weather-dashboard/"], ["life","L.I.F.E.","Life application","https://aidansweeny.github.io/life/","https://github.com/AidanSweeny/life/"], ["financhill","Financhill","Financial management application.","https://github.com/GabeSucich/BudgetingApp",]];
+var projects = [["weather","Weather App","Weather application that uses a public API to show weather in a searched area. I did all the development for this website using Javascript, HTML, CSS, JQuery, Ajax, and Bootstrap.","https://aidansweeny.github.io/weather-dashboard/", "https://github.com/AidanSweeny/weather-dashboard/"], ["life","L.I.F.E.","This application is intended as a one stop shop for game, movie and recipe information. I took on this project with a team during the early COVID days as a way to help people find things to do with their time. I only worked on the Back-end part of this project using Javascript, CSS, HTML, Ajax, JQuery and three open source databases.","https://aidansweeny.github.io/life/","https://github.com/AidanSweeny/life/"], ["financhill","Financhill","Financhill is a financial management application that I worked on in a team as a way to help people manage purchases based on usual expenses and income. I worked on the front-end for the whole project and the back-end for inputting information to SQL. This project was created using Javscript, CSS, HTML, SQL, Materialize, Passport.js, and Chartist.js","https://github.com/GabeSucich/BudgetingApp",]];
 
 function reveal() {
     var reveals = document.querySelectorAll(".reveal");
@@ -169,9 +169,21 @@ $(".nav").hover(function(event){
 
 $('.projects').on("click", function(event) {
     event.preventDefault();
-    $('.parallax').animate({
-        scrollTop: 2200},
-        1500);
+    if ($(window).width() < 768){
+        $('.parallax').animate({
+            scrollTop: 2380},
+            1500);
+    }
+    else if ($(window).width() <992){
+        $('.parallax').animate({
+            scrollTop: 2200},
+            1500);
+    }
+    else{
+        $('.parallax').animate({
+            scrollTop: 2150},
+            1500);
+    }
 })
 
 $('.about').on("click", function(event) {
@@ -183,48 +195,14 @@ $('.about').on("click", function(event) {
 
 $('.experience').on("click", function(event) {
     event.preventDefault()
-    $('.parallax').animate({
-        scrollTop: 1270},
-        1500);
+    if ($(window).width() < 768){
+        $('.parallax').animate({
+            scrollTop: 1200},
+            1500);
+    }
+    else {
+        $('.parallax').animate({
+            scrollTop: 1270},
+            1500);
+    }
 })
-
-
-// $.ajax({ method: "GET", url: "/api/education" }).then(function (res) {
-//     var response = JSON.parse(res);
-//     var school = response[0].school;
-//     var major = response[0].major
-//     var minor = response[0].minor
-//     var schoolTit = $(".schoolTit");
-//     var majorTit = $(".majorTit")
-//     var minorTit = $(".minorTit")
-//     schoolTit.text(school);
-//     majorTit.css("color", "grey")
-//     minorTit.css("color", "grey")
-//     majorTit.text(major + " Major");
-//     minorTit.text(minor + "Minor");
-// });
-
-// $.ajax({ method: "GET", url: "/api/skills" }).then(function (res) {
-//     var response = JSON.parse(res);
-//     console.log(response)
-//     for(element of response) {
-//         if (element.category === "language"){
-//             var li = $("<li>");
-//             li.css("color", "grey")
-//             li.text(element.title);
-//             $(".languages").append(li);
-//         }
-//         if (element.category === "style"){
-//             var li = $("<li>");
-//             li.css("color", "grey")
-//             li.text(element.title);
-//             $(".styleLanguages").append(li);
-//         }
-//         if (element.category === "library"){
-//             var li = $("<li>");
-//             li.css("color", "grey")
-//             li.text(element.title);
-//             $(".libraries").append(li);
-//         }
-//     }
-// });
